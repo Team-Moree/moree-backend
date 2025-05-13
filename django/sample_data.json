@@ -585,6 +585,84 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2025-05-13T11:46:45.264Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "1",
+        "object_repr": "UserCharacterInventory object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2025-05-13T11:46:51.253Z",
+        "user": 1,
+        "content_type": 20,
+        "object_id": "2",
+        "object_repr": "UserCharacterInventory object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2025-05-13T11:54:22.299Z",
+        "user": 1,
+        "content_type": 7,
+        "object_id": "3",
+        "object_repr": "04b22aa4-dae5-4f3e-9045-b5e0b08f905a",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2025-05-13T11:54:40.968Z",
+        "user": 1,
+        "content_type": 16,
+        "object_id": "2",
+        "object_repr": "사카모토데이즈 POP-UP STORE",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2025-05-13T11:55:03.951Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "16",
+        "object_repr": "b4cbb4fd-3412-41c2-9f5a-a95f1db755ab.jpg",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2025-05-13T11:55:11.342Z",
+        "user": 1,
+        "content_type": 8,
+        "object_id": "17",
+        "object_repr": "e7f1400e-7c0f-4c73-ba61-414b76ad0d72.jpg",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -2289,6 +2367,42 @@
     }
 },
 {
+    "model": "common.storedfile",
+    "pk": 16,
+    "fields": {
+        "stored_files_group": 3,
+        "name": "b4cbb4fd-3412-41c2-9f5a-a95f1db755ab",
+        "ext": ".jpg",
+        "path": "static/stored-file/b4cbb4fd-3412-41c2-9f5a-a95f1db755ab.jpg",
+        "status": "ACTIVE",
+        "hash": "687f9ce02d23c039e2304d305052e58e",
+        "uploader_type": "ADMIN",
+        "uploader_id": 1,
+        "priority": 1,
+        "expire_at": "2025-06-12T11:55:03.948Z",
+        "created_at": "2025-05-13T11:55:03.949Z",
+        "updated_at": "2025-05-13T11:55:03.949Z"
+    }
+},
+{
+    "model": "common.storedfile",
+    "pk": 17,
+    "fields": {
+        "stored_files_group": 3,
+        "name": "e7f1400e-7c0f-4c73-ba61-414b76ad0d72",
+        "ext": ".jpg",
+        "path": "static/stored-file/e7f1400e-7c0f-4c73-ba61-414b76ad0d72.jpg",
+        "status": "ACTIVE",
+        "hash": "9a51e5c1c806a18b13fbae53ebfac06c",
+        "uploader_type": "ADMIN",
+        "uploader_id": 1,
+        "priority": 2,
+        "expire_at": "2025-06-12T11:55:11.341Z",
+        "created_at": "2025-05-13T11:55:11.341Z",
+        "updated_at": "2025-05-13T11:55:11.341Z"
+    }
+},
+{
     "model": "common.storedfilesgroup",
     "pk": 1,
     "fields": {
@@ -2311,6 +2425,17 @@
     }
 },
 {
+    "model": "common.storedfilesgroup",
+    "pk": 3,
+    "fields": {
+        "name": "04b22aa4-dae5-4f3e-9045-b5e0b08f905a",
+        "description": "사카모토데이즈 POP-UP STORE's image group",
+        "status": "ACTIVE",
+        "created_at": "2025-05-13T11:54:22.298Z",
+        "updated_at": "2025-05-13T11:54:22.299Z"
+    }
+},
+{
     "model": "sample.user",
     "pk": 1,
     "fields": {
@@ -2324,6 +2449,30 @@
         "profile_backgroud_img_stored_files_group": 1,
         "created_at": "2025-05-13T11:09:07.661Z",
         "updated_at": "2025-05-13T11:09:07.661Z"
+    }
+},
+{
+    "model": "sample.usercharacterinventory",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "character": 3,
+        "store": 1,
+        "status": "ACTIVE",
+        "created_at": "2025-05-13T11:46:45.261Z",
+        "updated_at": "2025-05-13T11:46:45.261Z"
+    }
+},
+{
+    "model": "sample.usercharacterinventory",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "character": 4,
+        "store": 1,
+        "status": "ACTIVE",
+        "created_at": "2025-05-13T11:46:51.253Z",
+        "updated_at": "2025-05-13T11:46:51.253Z"
     }
 },
 {
@@ -2529,6 +2678,31 @@
             1,
             2,
             3
+        ]
+    }
+},
+{
+    "model": "sample.store",
+    "pk": 2,
+    "fields": {
+        "title": "사카모토데이즈 POP-UP STORE",
+        "address": "서울특별시 마포구 동교동 190-1 애경타워",
+        "latitude": "37.5577702",
+        "longitude": "126.9265109",
+        "description": "#사카모토데이즈 POP-UP STORE\r\n💥일정&장소 공개💥\r\n\r\n🔫MISSION : 5월 29일, AK PLAZA 홍대에서 타겟을 확인하라!\r\n#사카모토데이즈 POP-UP STORE 정보가 LIMITION에서 순차적으로 공개됩니다💥\r\n\r\n🗓️운영 기간: 2025.05.29(목) ~ 07.01(화)\r\n📍운영 장소: AK PLAZA 홍대4F LIMITION",
+        "business_day": 127,
+        "start_date": "2025-05-29",
+        "end_date": "2025-07-01",
+        "opening_time": "11:00:00",
+        "closing_time": "22:00:00",
+        "profile_img_stored_files_group": 3,
+        "pre_order_start_at": "2025-05-08T15:00:00Z",
+        "status": "ACTIVE",
+        "created_at": "2025-05-13T11:54:40.965Z",
+        "updated_at": "2025-05-13T11:54:40.965Z",
+        "store_categories": [
+            1,
+            2
         ]
     }
 },
