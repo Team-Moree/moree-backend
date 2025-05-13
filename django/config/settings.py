@@ -34,7 +34,7 @@ DEBUG = False if env.get("ENVIRONMENT", "").lower() == "prod" else True
 ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = [
-    env.get("ORIGIN", "*"),
+    env.get("ORIGIN", "http://localhost:8080"),
 ]
 
 # Application definition
