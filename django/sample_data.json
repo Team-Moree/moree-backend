@@ -663,6 +663,32 @@
     }
 },
 {
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2025-05-13T11:57:46.952Z",
+        "user": 1,
+        "content_type": 17,
+        "object_id": "4",
+        "object_repr": "StoreCharacterPool object (4)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2025-05-13T11:57:55.240Z",
+        "user": 1,
+        "content_type": 17,
+        "object_id": "5",
+        "object_repr": "StoreCharacterPool object (5)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
     "model": "auth.permission",
     "pk": 1,
     "fields": {
@@ -2770,6 +2796,30 @@
         "status": "ACTIVE",
         "created_at": "2025-05-13T11:35:31.955Z",
         "updated_at": "2025-05-13T11:35:31.955Z"
+    }
+},
+{
+    "model": "sample.storecharacterpool",
+    "pk": 4,
+    "fields": {
+        "store": 2,
+        "character": 3,
+        "weight": 1,
+        "status": "ACTIVE",
+        "created_at": "2025-05-13T11:57:46.952Z",
+        "updated_at": "2025-05-13T11:57:46.952Z"
+    }
+},
+{
+    "model": "sample.storecharacterpool",
+    "pk": 5,
+    "fields": {
+        "store": 2,
+        "character": 2,
+        "weight": 2,
+        "status": "ACTIVE",
+        "created_at": "2025-05-13T11:57:55.240Z",
+        "updated_at": "2025-05-13T11:57:55.240Z"
     }
 },
 {
