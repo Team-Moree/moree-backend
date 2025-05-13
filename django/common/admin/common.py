@@ -16,10 +16,6 @@ from common.enums import UploaderTypeEnum
 class StoredFileAdmin(admin.ModelAdmin):
     form = StoredFileAdminForm
 
-    # def get_list_display(self, request):
-    #     default = tuple(field.name for field in self.model._meta.fields)
-    #     return default + ("preview",)
-
     list_display = (
         "id",
         "preview",
@@ -49,7 +45,7 @@ class StoredFileAdmin(admin.ModelAdmin):
         return super().save_model(request, obj, form, change)
     
     def preview(self, obj):
-        if obj.ext.lower() in [".png", ".jpg", ".jpeg", ".gif"]:
+        if obj.ext.lower() in [".png", ".jpg", ".jpeg", ".gif", ".jfif"]:
             return format_html(
                 """<img src="{origin}/{path}" style="width:150px; height:150px;"/>""",
                 origin=env.get("ORIGIN", "http://localhost:8000"),
@@ -57,7 +53,7 @@ class StoredFileAdmin(admin.ModelAdmin):
             )
         return "No Preview"
     preview.short_description = "Preview"
-    
+
     def download_link(self, obj):
         return format_html(
             """<a href="{origin}/{path}">{path}</a>""",
@@ -69,6 +65,10 @@ class StoredFileAdmin(admin.ModelAdmin):
 
 @admin.register(StoredFilesGroup)
 class StoredFilesGroupAdmin(admin.ModelAdmin):
+    def get_list_display(self, request):
+        return tuple(field.name for field in self.model._meta.fields)
+
     search_fields = ("name",)
+    list_display_links = ("id", "name",)
     list_filter = ("status",)
     ordering = ("-created_at",)
