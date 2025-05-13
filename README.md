@@ -1,4 +1,4 @@
-# django-mixins-boilerplate
+# moree-backend
 
 ### Environment(.env)
 ```
