@@ -99,6 +99,9 @@ jobs:
           password: ${{secrets.SERVER_USER_PASSWORD}}
           # key: ${{secrets.SSH_PRIVATE_KEY}}
           script: |
+            echo "ORIGIN is: ${{secrets.ORIGIN}}"
+            echo "DOMAIN is: ${{secrets.DOMAIN}}"
+            echo "AWS_ACCESS_KEY is: ${{secrets.AWS_ACCESS_KEY}}"
             docker stop ${{github.event.repository.name}} || true
             docker rm ${{github.event.repository.name}} || true
             docker rmi ${{env.IMAGE_NAME}} || true
