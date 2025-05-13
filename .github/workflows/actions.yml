@@ -104,7 +104,7 @@ jobs:
             docker rmi ${{env.IMAGE_NAME}} || true
             docker load -i /tmp/${{github.event.repository.name}}/${{env.IMAGE_FILE_NAME}}
             docker run -d --name ${{github.event.repository.name}} \
-              -p 9000:8080 \
+              -p 12000:8080 \
               -e ENVIRONMENT="${{github.ref_name}}" \
               -e DJANGO_SECRET_KEY="${{secrets.DJANGO_SECRET_KEY}}" \
               -e SAMPLE_USER_SESSION_EXPIRE_TIME="${{secrets.SAMPLE_USER_SESSION_EXPIRE_TIME}}" \
