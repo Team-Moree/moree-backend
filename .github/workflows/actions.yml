@@ -110,6 +110,7 @@ jobs:
               -e SAMPLE_USER_SESSION_EXPIRE_TIME="${{secrets.SAMPLE_USER_SESSION_EXPIRE_TIME}}" \
               -e ADMIN_USER_SESSION_EXPIRE_TIME="${{secrets.ADMIN_USER_SESSION_EXPIRE_TIME}}" \
               -e ORIGIN="${{secrets.ORIGIN}}" \
+              -e DOMAIN="${{secrets.DOMAIN}}" \
               -e AWS_ACCESS_KEY="${{secrets.AWS_ACCESS_KEY}}" \
               -e AWS_SECRET_KEY="${{secrets.AWS_SECRET_KEY}}" \
               -e AWS_REGION="${{secrets.AWS_REGION}}" \
