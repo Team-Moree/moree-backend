@@ -4,12 +4,19 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from core.enums import StatusEnum
+from sample.enums import TermAgreementTypeEnum
 
 
 class Term(models.Model):
     term_category = models.ForeignKey(
         "sample.TermCategory",
         on_delete=models.RESTRICT,
+        db_index=True
+    )
+    agreement_type = models.CharField(
+        max_length=64,
+        choices=TermAgreementTypeEnum.choices,
+        default=TermAgreementTypeEnum.REQUIRED.value,
         db_index=True
     )
     name = models.CharField(
@@ -25,7 +32,6 @@ class Term(models.Model):
         db_index=True,
         editable=False,
         default=None
-        # default=lambda: hashlib.md5(binary).hexdigest()
     )
     status = models.CharField(
         max_length=64,
@@ -45,6 +51,10 @@ class Term(models.Model):
     class Meta:
         verbose_name = _("Term")
         verbose_name_plural = _("Terms")
+
+    def save(self, *args, **kwargs):
+        self.hash = hashlib.md5(self.content.encode()).hexdigest()
+        super().save(*args, **kwargs)
 
 
 class TermCategory(models.Model):
