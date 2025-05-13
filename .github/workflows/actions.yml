@@ -1,0 +1,114 @@
+name: Github Actions Pipeline
+
+on:
+  push:
+    branches:
+      - prod
+      - stg
+      - dev
+  pull_request:
+    branches:
+      - prod
+      - stg
+      - dev
+
+jobs:
+  test:
+    name: Test(${{github.ref_name}})
+    environment: ${{github.ref_name}}
+    runs-on: ubuntu-24.04
+
+    steps:
+      # 1. Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      # 2. Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # 3. Restore cached pip packages
+      - name: Restore cached pip packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{runner.os}}-pip-${{hashFiles('**/requirements.txt')}}
+          restore-keys: |
+            ${{runner.os}}-pip-
+
+      # 4. Install dependencies
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # # 5. Run tests
+      # - name: Run tests
+      #   run: npm test
+
+  deploy:
+    name: Build and Deploy(${{github.ref_name}})
+    environment: ${{github.ref_name}}
+    runs-on: ubuntu-24.04
+    needs: test
+    if: ${{github.event_name=='push'}}
+
+    steps:
+      # 1. Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          submodules: 'recursive'
+
+      # 2. Set up Docker Buildx
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # 3. Define Docker image name
+      - name: Set environment variables
+        run: |
+          echo "IMAGE_NAME=${{github.event.repository.name}}:${{github.ref_name}}" >> $GITHUB_ENV
+          echo "IMAGE_FILE_NAME=${{github.sha}}.tar" >> $GITHUB_ENV
+
+      # 4. Build and save Docker image
+      - name: Build and save Docker image
+        run: |
+          docker build -t ${{env.IMAGE_NAME}} .
+          docker save -o ${{env.IMAGE_FILE_NAME}} ${{env.IMAGE_NAME}}
+          chmod 644 ${{env.IMAGE_FILE_NAME}}
+
+      # 5. Transfer Docker Image to Server
+      - name: Transfer Docker Image to Server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{secrets.SERVER_HOST}}
+          username: ${{secrets.SERVER_USER_ACCOUNT}}
+          password: ${{secrets.SERVER_USER_PASSWORD}}
+          # key: ${{secrets.SSH_PRIVATE_KEY}}
+          source: "${{env.IMAGE_FILE_NAME}}"
+          target: "/tmp/${{github.event.repository.name}}"
+
+      # 6. Deploy the container
+      - name: Deploy to Server
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{secrets.SERVER_HOST}}
+          username: ${{secrets.SERVER_USER_ACCOUNT}}
+          password: ${{secrets.SERVER_USER_PASSWORD}}
+          # key: ${{secrets.SSH_PRIVATE_KEY}}
+          script: |
+            docker stop ${{github.event.repository.name}} || true
+            docker rm ${{github.event.repository.name}} || true
+            docker rmi ${{env.IMAGE_NAME}} || true
+            docker load -i /tmp/${{github.event.repository.name}}/${{env.IMAGE_FILE_NAME}}
+            docker run -d --name ${{github.event.repository.name}} \
+              -p 9000:8080 \
+              -e ENVIRONMENT="${{github.ref_name}}" \
+              -e DJANGO_SECRET_KEY="${{secrets.DJANGO_SECRET_KEY}}" \
+              -e SAMPLE_USER_SESSION_EXPIRE_TIME="${{secrets.SAMPLE_USER_SESSION_EXPIRE_TIME}}" \
+              -e ADMIN_USER_SESSION_EXPIRE_TIME="${{secrets.ADMIN_USER_SESSION_EXPIRE_TIME}}" \
+              --restart always \
+              ${{env.IMAGE_NAME}}
+            rm /tmp/${{github.event.repository.name}}/${{env.IMAGE_FILE_NAME}}

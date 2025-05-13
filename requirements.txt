@@ -1,0 +1,8 @@
+django
+djangorestframework
+drf-yasg
+django-filter
+uwsgi
+requests
+python-dotenv
+boto3

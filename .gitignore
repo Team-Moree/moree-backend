@@ -1,0 +1,27 @@
+# cache
+__pycache__
+
+# pycharm
+.idea
+
+# environment
+.env
+
+# local-db
+*.sqlite3
+
+# static
+static
+
+# logs
+logs
+
+# vscode
+.vscode
+
+# uwsgi
+uwsgi.pid
+uwsgi.ini
+
+# Temp
+migrations
