@@ -48,7 +48,7 @@ export DJANGO_SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL}
 
 $PYTHON_CMD ${PROJECT_PATH}/manage.py createsuperuser --noinput
 
-$PYTHON_CMD ${PROJECT_PATH}/manage.py loaddata sample_data.json
+$PYTHON_CMD ${PROJECT_PATH}/manage.py loaddata ${PROJECT_PATH}/sample_data.json
 
 # Insert test data
 #$PYTHON_CMD ${PROJECT_PATH}/manage.py insert_test_data
