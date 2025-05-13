@@ -25,6 +25,7 @@ class StoreAdmin(admin.ModelAdmin):
         "store_category_list",
         "coordinate",
         "business_day_list",
+        "pre_order_start_at",
         "opening_time",
         "closing_time",
         "status",
