@@ -6,3 +6,6 @@ from .user import (
     UserStoreBookmarkVisibilityEnum,
     UserReviewReportReasonEnum
 )
+from .term import (
+    TermAgreementTypeEnum,
+)
