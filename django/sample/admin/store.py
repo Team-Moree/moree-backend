@@ -83,6 +83,8 @@ class StoreAdmin(admin.ModelAdmin):
 
 @admin.register(StoreCategory)
 class StoreCategoryAdmin(admin.ModelAdmin):
+    def get_list_display(self, request):
+        return tuple(field.name for field in self.model._meta.fields)
     search_fields = ("name",)
     ordering = ("-created_at",)
 
