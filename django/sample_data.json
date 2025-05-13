@@ -3,11 +3,11 @@
     "model": "admin.logentry",
     "pk": 1,
     "fields": {
-        "action_time": "2025-05-06T05:27:29.276Z",
+        "action_time": "2025-05-13T10:39:37.898Z",
         "user": 1,
-        "content_type": 8,
+        "content_type": 7,
         "object_id": "1",
-        "object_repr": "ef2749c8-ea1a-4d45-b0f9-776fe73787f0..jpg..jpg",
+        "object_repr": "74564e44-5315-49f1-a297-e0438f62a664",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -16,24 +16,24 @@
     "model": "admin.logentry",
     "pk": 2,
     "fields": {
-        "action_time": "2025-05-06T05:29:43.923Z",
+        "action_time": "2025-05-13T10:39:53.696Z",
         "user": 1,
-        "content_type": 8,
-        "object_id": "1",
-        "object_repr": "ef2749c8-ea1a-4d45-b0f9-776fe73787f0..jpg..jpg",
-        "action_flag": 3,
-        "change_message": ""
+        "content_type": 7,
+        "object_id": "2",
+        "object_repr": "9d009be7-fa69-4d22-baff-962a4c68bd13",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 },
 {
     "model": "admin.logentry",
     "pk": 3,
     "fields": {
-        "action_time": "2025-05-06T05:29:53.144Z",
+        "action_time": "2025-05-13T10:40:11.241Z",
         "user": 1,
         "content_type": 8,
-        "object_id": "2",
-        "object_repr": "ec3d63fa-c648-41eb-89e7-f1828c049361..jpg",
+        "object_id": "1",
+        "object_repr": "cde09c10-9d5f-4ff2-b72b-7b683aa1fe59.jpg",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -42,24 +42,24 @@
     "model": "admin.logentry",
     "pk": 4,
     "fields": {
-        "action_time": "2025-05-06T05:33:49.160Z",
+        "action_time": "2025-05-13T10:40:19.869Z",
         "user": 1,
         "content_type": 8,
         "object_id": "2",
-        "object_repr": "ec3d63fa-c648-41eb-89e7-f1828c049361.jpg",
-        "action_flag": 3,
-        "change_message": ""
+        "object_repr": "150db58b-845c-4133-85df-fc2e812190da.jpg",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 },
 {
     "model": "admin.logentry",
     "pk": 5,
     "fields": {
-        "action_time": "2025-05-06T05:34:21.334Z",
+        "action_time": "2025-05-13T10:40:33.398Z",
         "user": 1,
         "content_type": 8,
         "object_id": "3",
-        "object_repr": "730b307d-d606-4313-bdf2-20c3bd4ce992.jpg",
+        "object_repr": "b408ba63-dbdb-4682-a2c7-807d55b4f642.jpg",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -68,11 +68,11 @@
     "model": "admin.logentry",
     "pk": 6,
     "fields": {
-        "action_time": "2025-05-06T05:45:58.509Z",
+        "action_time": "2025-05-13T10:40:42.722Z",
         "user": 1,
         "content_type": 8,
         "object_id": "4",
-        "object_repr": "9af4eb06-68c6-4ab4-b03e-e93ad4457409.jpg",
+        "object_repr": "6e3204be-0d84-4a9b-b22b-1d3549a7f9d4.jpg",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -81,37 +81,37 @@
     "model": "admin.logentry",
     "pk": 7,
     "fields": {
-        "action_time": "2025-05-06T05:52:44.376Z",
+        "action_time": "2025-05-13T10:40:56.403Z",
         "user": 1,
         "content_type": 8,
-        "object_id": "4",
-        "object_repr": "9af4eb06-68c6-4ab4-b03e-e93ad4457409.jpg",
-        "action_flag": 3,
-        "change_message": ""
+        "object_id": "5",
+        "object_repr": "909dd720-95a1-4c26-b118-a957422c118f.jfif",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 },
 {
     "model": "admin.logentry",
     "pk": 8,
     "fields": {
-        "action_time": "2025-05-06T05:52:44.376Z",
+        "action_time": "2025-05-13T10:41:05.158Z",
         "user": 1,
         "content_type": 8,
-        "object_id": "3",
-        "object_repr": "730b307d-d606-4313-bdf2-20c3bd4ce992.jpg",
-        "action_flag": 3,
-        "change_message": ""
+        "object_id": "6",
+        "object_repr": "69be215a-92b0-4cd4-b101-f64955ca0bdc.jpg",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 },
 {
     "model": "admin.logentry",
     "pk": 9,
     "fields": {
-        "action_time": "2025-05-06T05:53:02.401Z",
+        "action_time": "2025-05-13T10:41:13.614Z",
         "user": 1,
         "content_type": 8,
-        "object_id": "5",
-        "object_repr": "d122b920-9454-47ae-a70b-f2820b4d50c3.png",
+        "object_id": "7",
+        "object_repr": "e742223d-2adb-4764-be7a-d1b44a102521.jpg",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -120,11 +120,11 @@
     "model": "admin.logentry",
     "pk": 10,
     "fields": {
-        "action_time": "2025-05-06T06:09:20.328Z",
+        "action_time": "2025-05-13T10:41:22.158Z",
         "user": 1,
         "content_type": 8,
-        "object_id": "6",
-        "object_repr": "a9d9ee4c-7196-4e2c-b581-838e5bd0a6e1.png",
+        "object_id": "8",
+        "object_repr": "3f5b9aaf-d4c7-4f41-a0b1-038cc4533ebf.jpg",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -133,11 +133,11 @@
     "model": "admin.logentry",
     "pk": 11,
     "fields": {
-        "action_time": "2025-05-06T07:07:05.540Z",
+        "action_time": "2025-05-13T10:41:40.569Z",
         "user": 1,
         "content_type": 12,
         "object_id": "1",
-        "object_repr": "테스트",
+        "object_repr": "영화",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -146,11 +146,11 @@
     "model": "admin.logentry",
     "pk": 12,
     "fields": {
-        "action_time": "2025-05-06T07:07:17.783Z",
+        "action_time": "2025-05-13T10:41:46.771Z",
         "user": 1,
-        "content_type": 7,
-        "object_id": "1",
-        "object_repr": "ㅅㄷㄴㅅ",
+        "content_type": 12,
+        "object_id": "2",
+        "object_repr": "웹툰",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -159,11 +159,11 @@
     "model": "admin.logentry",
     "pk": 13,
     "fields": {
-        "action_time": "2025-05-06T07:07:22.400Z",
+        "action_time": "2025-05-13T10:41:50.889Z",
         "user": 1,
-        "content_type": 16,
-        "object_id": "1",
-        "object_repr": "ㅅㄷㄴㅁㅅ",
+        "content_type": 12,
+        "object_id": "3",
+        "object_repr": "드라마",
         "action_flag": 1,
         "change_message": "[{\"added\": {}}]"
     }
@@ -172,13 +172,13 @@
     "model": "admin.logentry",
     "pk": 14,
     "fields": {
-        "action_time": "2025-05-06T09:05:07.405Z",
+        "action_time": "2025-05-13T10:42:56.734Z",
         "user": 1,
-        "content_type": 8,
-        "object_id": "6",
-        "object_repr": "1eedadd5-f249-4cf2-8a52-a9c623a2212b.png",
-        "action_flag": 2,
-        "change_message": "[{\"changed\": {\"fields\": [\"file\"]}}]"
+        "content_type": 16,
+        "object_id": "1",
+        "object_repr": "오늘부터 신령님 콜라보 카페",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
     }
 },
 {
@@ -581,7 +581,7 @@
     "model": "auth.permission",
     "pk": 45,
     "fields": {
-        "name": "Can add StoreCategory",
+        "name": "Can add Store Category",
         "content_type": 12,
         "codename": "add_storecategory"
     }
@@ -590,7 +590,7 @@
     "model": "auth.permission",
     "pk": 46,
     "fields": {
-        "name": "Can change StoreCategory",
+        "name": "Can change Store Category",
         "content_type": 12,
         "codename": "change_storecategory"
     }
@@ -599,7 +599,7 @@
     "model": "auth.permission",
     "pk": 47,
     "fields": {
-        "name": "Can delete StoreCategory",
+        "name": "Can delete Store Category",
         "content_type": 12,
         "codename": "delete_storecategory"
     }
@@ -608,7 +608,7 @@
     "model": "auth.permission",
     "pk": 48,
     "fields": {
-        "name": "Can view StoreCategory",
+        "name": "Can view Store Category",
         "content_type": 12,
         "codename": "view_storecategory"
     }
@@ -617,7 +617,7 @@
     "model": "auth.permission",
     "pk": 49,
     "fields": {
-        "name": "Can add term category",
+        "name": "Can add Term Category",
         "content_type": 13,
         "codename": "add_termcategory"
     }
@@ -626,7 +626,7 @@
     "model": "auth.permission",
     "pk": 50,
     "fields": {
-        "name": "Can change term category",
+        "name": "Can change Term Category",
         "content_type": 13,
         "codename": "change_termcategory"
     }
@@ -635,7 +635,7 @@
     "model": "auth.permission",
     "pk": 51,
     "fields": {
-        "name": "Can delete term category",
+        "name": "Can delete Term Category",
         "content_type": 13,
         "codename": "delete_termcategory"
     }
@@ -644,7 +644,7 @@
     "model": "auth.permission",
     "pk": 52,
     "fields": {
-        "name": "Can view term category",
+        "name": "Can view Term Category",
         "content_type": 13,
         "codename": "view_termcategory"
     }
@@ -761,7 +761,7 @@
     "model": "auth.permission",
     "pk": 65,
     "fields": {
-        "name": "Can add Character Group",
+        "name": "Can add Store Character Pool",
         "content_type": 17,
         "codename": "add_storecharacterpool"
     }
@@ -770,7 +770,7 @@
     "model": "auth.permission",
     "pk": 66,
     "fields": {
-        "name": "Can change Character Group",
+        "name": "Can change Store Character Pool",
         "content_type": 17,
         "codename": "change_storecharacterpool"
     }
@@ -779,7 +779,7 @@
     "model": "auth.permission",
     "pk": 67,
     "fields": {
-        "name": "Can delete Character Group",
+        "name": "Can delete Store Character Pool",
         "content_type": 17,
         "codename": "delete_storecharacterpool"
     }
@@ -788,7 +788,7 @@
     "model": "auth.permission",
     "pk": 68,
     "fields": {
-        "name": "Can view Character Group",
+        "name": "Can view Store Character Pool",
         "content_type": 17,
         "codename": "view_storecharacterpool"
     }
@@ -797,7 +797,7 @@
     "model": "auth.permission",
     "pk": 69,
     "fields": {
-        "name": "Can add term",
+        "name": "Can add Term",
         "content_type": 18,
         "codename": "add_term"
     }
@@ -806,7 +806,7 @@
     "model": "auth.permission",
     "pk": 70,
     "fields": {
-        "name": "Can change term",
+        "name": "Can change Term",
         "content_type": 18,
         "codename": "change_term"
     }
@@ -815,7 +815,7 @@
     "model": "auth.permission",
     "pk": 71,
     "fields": {
-        "name": "Can delete term",
+        "name": "Can delete Term",
         "content_type": 18,
         "codename": "delete_term"
     }
@@ -824,7 +824,7 @@
     "model": "auth.permission",
     "pk": 72,
     "fields": {
-        "name": "Can view term",
+        "name": "Can view Term",
         "content_type": 18,
         "codename": "view_term"
     }
@@ -1337,8 +1337,8 @@
     "model": "auth.user",
     "pk": 1,
     "fields": {
-        "password": "pbkdf2_sha256$870000$R1iSMJFUAHgLA4m9b0PZkV$XjA5OhOnmsfhDGlwFlr5TRCspjM+U7RP7z9IM2DpSCo=",
-        "last_login": "2025-04-28T07:05:41.150Z",
+        "password": "pbkdf2_sha256$870000$QofwbbQARwb8FKsYPGKxmc$IL+JV9ovzOIKv/SVU6StbuDAnVKIg5gvX7teNwi3SRk=",
+        "last_login": "2025-05-13T10:38:52.821Z",
         "is_superuser": true,
         "username": "root",
         "first_name": "",
@@ -1346,7 +1346,7 @@
         "email": "test@test.com",
         "is_staff": true,
         "is_active": true,
-        "date_joined": "2025-04-28T07:05:20.636Z",
+        "date_joined": "2025-05-13T10:38:46.370Z",
         "groups": [],
         "user_permissions": []
     }
@@ -1609,80 +1609,201 @@
 },
 {
     "model": "sessions.session",
-    "pk": "7j1fghjfhu11koh2w4fgyl807m4tz8nn",
+    "pk": "e5swtlti2yg6ud4pyotos8xcqnbazyqp",
     "fields": {
-        "session_data": ".eJxVjEEOwiAQRe_C2hCYAlKX7j0DGQZGqgaS0q6Md7dNutDtf-_9twi4LiWsPc9hSuIitDj9bhHpmesO0gPrvUlqdZmnKHdFHrTLW0v5dT3cv4OCvWw1Zwfa29GgcwAEWg2GidgpA0Q2ekzWUuQxGkA_4GDRe3aWSW1lPovPF9tsOAA:1u9IYf:WlpGhqlLCLl0IyXqZiWGpA8wPsjyTyj3Cbzt_nFeei4",
-        "expire_date": "2025-05-12T07:05:41.156Z"
+        "session_data": ".eJxVjMsOwiAQRf-FtSHA8HBcuu83EGBAqgaS0q6M_65NutDtPefcF_NhW6vfRl78TOzCJDv9bjGkR247oHtot85Tb-syR74r_KCDT53y83q4fwc1jPqtk4lFZUQLUqBEgcokR5pAoxNSa2HOlBRoI9EWEUFIQAw5WVPAWQrs_QGttDaL:1uEn2C:VVU1esAaGWU5jsmGHMfU0AynsoU4wxj6n1u-pdcImEM",
+        "expire_date": "2025-05-27T10:38:52.827Z"
+    }
+},
+{
+    "model": "common.storedfile",
+    "pk": 1,
+    "fields": {
+        "stored_files_group": 1,
+        "name": "cde09c10-9d5f-4ff2-b72b-7b683aa1fe59",
+        "ext": ".jpg",
+        "path": "static/stored-file/cde09c10-9d5f-4ff2-b72b-7b683aa1fe59.jpg",
+        "status": "ACTIVE",
+        "hash": "738b9bcc75a78d84aca0eacb2e48558f",
+        "uploader_type": "ADMIN",
+        "uploader_id": 1,
+        "priority": 1,
+        "expire_at": "2025-06-12T10:40:11.239Z",
+        "created_at": "2025-05-13T10:40:11.240Z",
+        "updated_at": "2025-05-13T10:40:11.240Z"
+    }
+},
+{
+    "model": "common.storedfile",
+    "pk": 2,
+    "fields": {
+        "stored_files_group": 1,
+        "name": "150db58b-845c-4133-85df-fc2e812190da",
+        "ext": ".jpg",
+        "path": "static/stored-file/150db58b-845c-4133-85df-fc2e812190da.jpg",
+        "status": "ACTIVE",
+        "hash": "93ecf0255cf2a493134bb69b1551baae",
+        "uploader_type": "ADMIN",
+        "uploader_id": 1,
+        "priority": 2,
+        "expire_at": "2025-06-12T10:40:19.868Z",
+        "created_at": "2025-05-13T10:40:19.869Z",
+        "updated_at": "2025-05-13T10:40:19.869Z"
+    }
+},
+{
+    "model": "common.storedfile",
+    "pk": 3,
+    "fields": {
+        "stored_files_group": 1,
+        "name": "b408ba63-dbdb-4682-a2c7-807d55b4f642",
+        "ext": ".jpg",
+        "path": "static/stored-file/b408ba63-dbdb-4682-a2c7-807d55b4f642.jpg",
+        "status": "ACTIVE",
+        "hash": "59986993f9e0b3e4c0c1f4fb7ad6ded8",
+        "uploader_type": "ADMIN",
+        "uploader_id": 1,
+        "priority": 3,
+        "expire_at": "2025-06-12T10:40:33.397Z",
+        "created_at": "2025-05-13T10:40:33.397Z",
+        "updated_at": "2025-05-13T10:40:33.397Z"
+    }
+},
+{
+    "model": "common.storedfile",
+    "pk": 4,
+    "fields": {
+        "stored_files_group": null,
+        "name": "6e3204be-0d84-4a9b-b22b-1d3549a7f9d4",
+        "ext": ".jpg",
+        "path": "static/stored-file/6e3204be-0d84-4a9b-b22b-1d3549a7f9d4.jpg",
+        "status": "ACTIVE",
+        "hash": "8b3852a921a293d9be6fe6ca44c62880",
+        "uploader_type": "ADMIN",
+        "uploader_id": 1,
+        "priority": 0,
+        "expire_at": "2025-06-12T10:40:42.721Z",
+        "created_at": "2025-05-13T10:40:42.721Z",
+        "updated_at": "2025-05-13T10:40:42.721Z"
     }
 },
 {
     "model": "common.storedfile",
     "pk": 5,
     "fields": {
-        "stored_files_group": null,
-        "name": "d122b920-9454-47ae-a70b-f2820b4d50c3",
-        "ext": ".png",
-        "path": "static/stored-file/d122b920-9454-47ae-a70b-f2820b4d50c3.png",
+        "stored_files_group": 2,
+        "name": "909dd720-95a1-4c26-b118-a957422c118f",
+        "ext": ".jfif",
+        "path": "static/stored-file/909dd720-95a1-4c26-b118-a957422c118f.jfif",
         "status": "ACTIVE",
-        "hash": "cd1d2406afd817d37ce50821a4c889dd",
+        "hash": "f6ec8ceed32d701667e8e371bbcd2aea",
         "uploader_type": "ADMIN",
         "uploader_id": 1,
-        "priority": 0,
-        "expire_at": "2025-06-05T05:53:02.399Z",
-        "created_at": "2025-05-06T05:53:02.401Z",
-        "updated_at": "2025-05-06T05:53:02.401Z"
+        "priority": 1,
+        "expire_at": "2025-06-12T10:40:56.402Z",
+        "created_at": "2025-05-13T10:40:56.402Z",
+        "updated_at": "2025-05-13T10:40:56.402Z"
     }
 },
 {
     "model": "common.storedfile",
     "pk": 6,
     "fields": {
-        "stored_files_group": null,
-        "name": "1eedadd5-f249-4cf2-8a52-a9c623a2212b",
-        "ext": ".png",
-        "path": "static/stored-file/1eedadd5-f249-4cf2-8a52-a9c623a2212b.png",
+        "stored_files_group": 2,
+        "name": "69be215a-92b0-4cd4-b101-f64955ca0bdc",
+        "ext": ".jpg",
+        "path": "static/stored-file/69be215a-92b0-4cd4-b101-f64955ca0bdc.jpg",
         "status": "ACTIVE",
-        "hash": "cd1d2406afd817d37ce50821a4c889dd",
+        "hash": "8da45254d4e17f6dafe45997af326b52",
         "uploader_type": "ADMIN",
         "uploader_id": 1,
-        "priority": 0,
-        "expire_at": "2025-06-05T09:05:07.402Z",
-        "created_at": "2025-05-06T06:09:20.325Z",
-        "updated_at": "2025-05-06T09:05:07.402Z"
+        "priority": 2,
+        "expire_at": "2025-06-12T10:41:05.157Z",
+        "created_at": "2025-05-13T10:41:05.157Z",
+        "updated_at": "2025-05-13T10:41:05.157Z"
+    }
+},
+{
+    "model": "common.storedfile",
+    "pk": 7,
+    "fields": {
+        "stored_files_group": 2,
+        "name": "e742223d-2adb-4764-be7a-d1b44a102521",
+        "ext": ".jpg",
+        "path": "static/stored-file/e742223d-2adb-4764-be7a-d1b44a102521.jpg",
+        "status": "ACTIVE",
+        "hash": "b5ed9f5d6445c561c5ec287efbe8cb57",
+        "uploader_type": "ADMIN",
+        "uploader_id": 1,
+        "priority": 3,
+        "expire_at": "2025-06-12T10:41:13.613Z",
+        "created_at": "2025-05-13T10:41:13.613Z",
+        "updated_at": "2025-05-13T10:41:13.613Z"
+    }
+},
+{
+    "model": "common.storedfile",
+    "pk": 8,
+    "fields": {
+        "stored_files_group": 2,
+        "name": "3f5b9aaf-d4c7-4f41-a0b1-038cc4533ebf",
+        "ext": ".jpg",
+        "path": "static/stored-file/3f5b9aaf-d4c7-4f41-a0b1-038cc4533ebf.jpg",
+        "status": "ACTIVE",
+        "hash": "6cebe63005c52353c4938f91b464d9d3",
+        "uploader_type": "ADMIN",
+        "uploader_id": 1,
+        "priority": 4,
+        "expire_at": "2025-06-12T10:41:22.157Z",
+        "created_at": "2025-05-13T10:41:22.158Z",
+        "updated_at": "2025-05-13T10:41:22.158Z"
     }
 },
 {
     "model": "common.storedfilesgroup",
     "pk": 1,
     "fields": {
-        "name": "ㅅㄷㄴㅅ",
-        "description": "ㅅㄷㄴㅅ",
+        "name": "74564e44-5315-49f1-a297-e0438f62a664",
+        "description": "Liam's profile image group",
         "status": "ACTIVE",
-        "created_at": "2025-05-06T07:07:17.783Z",
-        "updated_at": "2025-05-06T07:07:17.783Z"
+        "created_at": "2025-05-13T10:39:37.898Z",
+        "updated_at": "2025-05-13T10:39:37.898Z"
+    }
+},
+{
+    "model": "common.storedfilesgroup",
+    "pk": 2,
+    "fields": {
+        "name": "9d009be7-fa69-4d22-baff-962a4c68bd13",
+        "description": "오늘부터 신령님 콜라보 카페's image group",
+        "status": "ACTIVE",
+        "created_at": "2025-05-13T10:39:53.695Z",
+        "updated_at": "2025-05-13T10:39:53.695Z"
     }
 },
 {
     "model": "sample.store",
     "pk": 1,
     "fields": {
-        "title": "ㅅㄷㄴㅁㅅ",
-        "address": "ㅁㄴㄷㅅㅁㄴㄷㅅㅁㄴㄷㅅ",
-        "latitude": "123.000000",
-        "longitude": "123.000000",
-        "description": "ㄷㅅㄴㅅ",
+        "title": "오늘부터 신령님 콜라보 카페",
+        "address": "서울특별시 서대문구 창천동 30-1 현대백화점 유플렉스",
+        "latitude": "37.5567499",
+        "longitude": "126.9365982",
+        "description": "<오늘부터 신령님> X MOAE:KU\r\n공식 콜라보 카페 NEW OPEN🦊\r\n\r\n🗓일정: 25.05.01(목) ~ 25.06.08(일)\r\n📌장소: 신촌 현대백화점 U-PLEX B2 MOAE:KU\r\n💜이벤트 정보 추후 공지 예정",
         "business_day": 127,
-        "start_date": "2025-05-06",
-        "end_date": "2025-05-06",
-        "opening_time": "16:00:43",
-        "closing_time": "16:00:45",
-        "profile_img_stored_files_group": 1,
-        "pre_order_start_at": "2025-05-06T07:00:46Z",
+        "start_date": "2025-05-01",
+        "end_date": "2025-06-08",
+        "opening_time": "10:30:00",
+        "closing_time": "22:00:00",
+        "profile_img_stored_files_group": 2,
+        "pre_order_start_at": "2025-04-24T15:00:00Z",
         "status": "ACTIVE",
-        "created_at": "2025-05-06T07:07:22.398Z",
-        "updated_at": "2025-05-06T07:07:22.398Z",
+        "created_at": "2025-05-13T10:42:56.732Z",
+        "updated_at": "2025-05-13T10:42:56.732Z",
         "store_categories": [
-            1
+            1,
+            2,
+            3
         ]
     }
 },
@@ -1690,10 +1811,30 @@
     "model": "sample.storecategory",
     "pk": 1,
     "fields": {
-        "name": "테스트",
+        "name": "영화",
         "priority": 1,
-        "created_at": "2025-05-06T07:07:05.539Z",
-        "updated_at": "2025-05-06T07:07:05.539Z"
+        "created_at": "2025-05-13T10:41:40.568Z",
+        "updated_at": "2025-05-13T10:41:40.568Z"
+    }
+},
+{
+    "model": "sample.storecategory",
+    "pk": 2,
+    "fields": {
+        "name": "웹툰",
+        "priority": 2,
+        "created_at": "2025-05-13T10:41:46.770Z",
+        "updated_at": "2025-05-13T10:41:46.770Z"
+    }
+},
+{
+    "model": "sample.storecategory",
+    "pk": 3,
+    "fields": {
+        "name": "드라마",
+        "priority": 3,
+        "created_at": "2025-05-13T10:41:50.888Z",
+        "updated_at": "2025-05-13T10:41:50.888Z"
     }
 }
 ]
