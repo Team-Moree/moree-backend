@@ -10,13 +10,16 @@ class TermAdmin(admin.ModelAdmin):
     list_display = (
         "id",
         "term_category",
+        "agreement_type",
         "name",
         "version",
         "priority",
         "status",
+        "hash",
         "created_at",
         "updated_at"
     )
+    list_display_links = ("id", "name")
     search_fields = ("name", "term_category__name")
     list_filter = ("status", "term_category__name")
     ordering = ("-created_at", "-version")
