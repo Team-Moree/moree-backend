@@ -5,7 +5,7 @@ from rest_framework.exceptions import ValidationError
 
 class EpochTimeFilter(rest_framework.Filter):
     def filter(self, qs, value):
-        if value is None:
+        if value is None or value == "":
             return qs
         try:
             timestamp = float(value)
