@@ -1950,7 +1950,7 @@
     "model": "contenttypes.contenttype",
     "pk": 12,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "storecategory"
     }
 },
@@ -1958,7 +1958,7 @@
     "model": "contenttypes.contenttype",
     "pk": 13,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "termcategory"
     }
 },
@@ -1966,7 +1966,7 @@
     "model": "contenttypes.contenttype",
     "pk": 14,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "usersmsverification"
     }
 },
@@ -1974,7 +1974,7 @@
     "model": "contenttypes.contenttype",
     "pk": 15,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "character"
     }
 },
@@ -1982,7 +1982,7 @@
     "model": "contenttypes.contenttype",
     "pk": 16,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "store"
     }
 },
@@ -1990,7 +1990,7 @@
     "model": "contenttypes.contenttype",
     "pk": 17,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "storecharacterpool"
     }
 },
@@ -1998,7 +1998,7 @@
     "model": "contenttypes.contenttype",
     "pk": 18,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "term"
     }
 },
@@ -2006,7 +2006,7 @@
     "model": "contenttypes.contenttype",
     "pk": 19,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "user"
     }
 },
@@ -2014,7 +2014,7 @@
     "model": "contenttypes.contenttype",
     "pk": 20,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "usercharacterinventory"
     }
 },
@@ -2022,7 +2022,7 @@
     "model": "contenttypes.contenttype",
     "pk": 21,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "userfolloing"
     }
 },
@@ -2030,7 +2030,7 @@
     "model": "contenttypes.contenttype",
     "pk": 22,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "userlog"
     }
 },
@@ -2038,7 +2038,7 @@
     "model": "contenttypes.contenttype",
     "pk": 23,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "userrefreshtoken"
     }
 },
@@ -2046,7 +2046,7 @@
     "model": "contenttypes.contenttype",
     "pk": 24,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "useraccesstoken"
     }
 },
@@ -2054,7 +2054,7 @@
     "model": "contenttypes.contenttype",
     "pk": 25,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "userreview"
     }
 },
@@ -2062,7 +2062,7 @@
     "model": "contenttypes.contenttype",
     "pk": 26,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "userreviewreport"
     }
 },
@@ -2070,7 +2070,7 @@
     "model": "contenttypes.contenttype",
     "pk": 27,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "usersmsverificationrecord"
     }
 },
@@ -2078,7 +2078,7 @@
     "model": "contenttypes.contenttype",
     "pk": 28,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "usersmsverificationrequest"
     }
 },
@@ -2086,7 +2086,7 @@
     "model": "contenttypes.contenttype",
     "pk": 29,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "userstorebookmark"
     }
 },
@@ -2094,7 +2094,7 @@
     "model": "contenttypes.contenttype",
     "pk": 30,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "userstorecategory"
     }
 },
@@ -2102,7 +2102,7 @@
     "model": "contenttypes.contenttype",
     "pk": 31,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "userstorestamp"
     }
 },
@@ -2110,7 +2110,7 @@
     "model": "contenttypes.contenttype",
     "pk": 32,
     "fields": {
-        "app_label": "sample",
+        "app_label": "moree",
         "model": "usertermagreement"
     }
 },
@@ -2462,7 +2462,7 @@
     }
 },
 {
-    "model": "sample.user",
+    "model": "moree.user",
     "pk": 1,
     "fields": {
         "name": "Liam",
@@ -2478,7 +2478,7 @@
     }
 },
 {
-    "model": "sample.usercharacterinventory",
+    "model": "moree.usercharacterinventory",
     "pk": 1,
     "fields": {
         "user": 1,
@@ -2490,7 +2490,7 @@
     }
 },
 {
-    "model": "sample.usercharacterinventory",
+    "model": "moree.usercharacterinventory",
     "pk": 2,
     "fields": {
         "user": 1,
@@ -2502,7 +2502,7 @@
     }
 },
 {
-    "model": "sample.usertermagreement",
+    "model": "moree.usertermagreement",
     "pk": 1,
     "fields": {
         "term": 1,
@@ -2513,7 +2513,7 @@
     }
 },
 {
-    "model": "sample.usertermagreement",
+    "model": "moree.usertermagreement",
     "pk": 2,
     "fields": {
         "term": 2,
@@ -2524,7 +2524,7 @@
     }
 },
 {
-    "model": "sample.usertermagreement",
+    "model": "moree.usertermagreement",
     "pk": 3,
     "fields": {
         "term": 3,
@@ -2535,7 +2535,7 @@
     }
 },
 {
-    "model": "sample.usertermagreement",
+    "model": "moree.usertermagreement",
     "pk": 4,
     "fields": {
         "term": 4,
@@ -2546,7 +2546,7 @@
     }
 },
 {
-    "model": "sample.userstorebookmark",
+    "model": "moree.userstorebookmark",
     "pk": 1,
     "fields": {
         "user": 1,
@@ -2562,7 +2562,7 @@
     }
 },
 {
-    "model": "sample.userstorebookmark",
+    "model": "moree.userstorebookmark",
     "pk": 2,
     "fields": {
         "user": 1,
@@ -2578,7 +2578,7 @@
     }
 },
 {
-    "model": "sample.userstorecategory",
+    "model": "moree.userstorecategory",
     "pk": 1,
     "fields": {
         "store_category": 1,
@@ -2588,7 +2588,7 @@
     }
 },
 {
-    "model": "sample.userstorecategory",
+    "model": "moree.userstorecategory",
     "pk": 2,
     "fields": {
         "store_category": 3,
@@ -2598,7 +2598,7 @@
     }
 },
 {
-    "model": "sample.term",
+    "model": "moree.term",
     "pk": 1,
     "fields": {
         "term_category": 1,
@@ -2614,7 +2614,7 @@
     }
 },
 {
-    "model": "sample.term",
+    "model": "moree.term",
     "pk": 2,
     "fields": {
         "term_category": 1,
@@ -2630,7 +2630,7 @@
     }
 },
 {
-    "model": "sample.term",
+    "model": "moree.term",
     "pk": 3,
     "fields": {
         "term_category": 2,
@@ -2646,7 +2646,7 @@
     }
 },
 {
-    "model": "sample.term",
+    "model": "moree.term",
     "pk": 4,
     "fields": {
         "term_category": 2,
@@ -2662,7 +2662,7 @@
     }
 },
 {
-    "model": "sample.termcategory",
+    "model": "moree.termcategory",
     "pk": 1,
     "fields": {
         "name": "General",
@@ -2672,7 +2672,7 @@
     }
 },
 {
-    "model": "sample.termcategory",
+    "model": "moree.termcategory",
     "pk": 2,
     "fields": {
         "name": "Marketing",
@@ -2682,7 +2682,7 @@
     }
 },
 {
-    "model": "sample.store",
+    "model": "moree.store",
     "pk": 1,
     "fields": {
         "title": "오늘부터 신령님 콜라보 카페",
@@ -2708,7 +2708,7 @@
     }
 },
 {
-    "model": "sample.store",
+    "model": "moree.store",
     "pk": 2,
     "fields": {
         "title": "사카모토데이즈 POP-UP STORE",
@@ -2733,7 +2733,7 @@
     }
 },
 {
-    "model": "sample.storecategory",
+    "model": "moree.storecategory",
     "pk": 1,
     "fields": {
         "name": "영화",
@@ -2743,7 +2743,7 @@
     }
 },
 {
-    "model": "sample.storecategory",
+    "model": "moree.storecategory",
     "pk": 2,
     "fields": {
         "name": "웹툰",
@@ -2753,7 +2753,7 @@
     }
 },
 {
-    "model": "sample.storecategory",
+    "model": "moree.storecategory",
     "pk": 3,
     "fields": {
         "name": "드라마",
@@ -2763,7 +2763,7 @@
     }
 },
 {
-    "model": "sample.storecharacterpool",
+    "model": "moree.storecharacterpool",
     "pk": 1,
     "fields": {
         "store": 1,
@@ -2775,7 +2775,7 @@
     }
 },
 {
-    "model": "sample.storecharacterpool",
+    "model": "moree.storecharacterpool",
     "pk": 2,
     "fields": {
         "store": 1,
@@ -2787,7 +2787,7 @@
     }
 },
 {
-    "model": "sample.storecharacterpool",
+    "model": "moree.storecharacterpool",
     "pk": 3,
     "fields": {
         "store": 1,
@@ -2799,7 +2799,7 @@
     }
 },
 {
-    "model": "sample.storecharacterpool",
+    "model": "moree.storecharacterpool",
     "pk": 4,
     "fields": {
         "store": 2,
@@ -2811,7 +2811,7 @@
     }
 },
 {
-    "model": "sample.storecharacterpool",
+    "model": "moree.storecharacterpool",
     "pk": 5,
     "fields": {
         "store": 2,
@@ -2823,7 +2823,7 @@
     }
 },
 {
-    "model": "sample.character",
+    "model": "moree.character",
     "pk": 1,
     "fields": {
         "name": "제이지",
@@ -2835,7 +2835,7 @@
     }
 },
 {
-    "model": "sample.character",
+    "model": "moree.character",
     "pk": 2,
     "fields": {
         "name": "프로도",
@@ -2847,7 +2847,7 @@
     }
 },
 {
-    "model": "sample.character",
+    "model": "moree.character",
     "pk": 3,
     "fields": {
         "name": "네오",
@@ -2859,7 +2859,7 @@
     }
 },
 {
-    "model": "sample.character",
+    "model": "moree.character",
     "pk": 4,
     "fields": {
         "name": "튜브",
@@ -2871,7 +2871,7 @@
     }
 },
 {
-    "model": "sample.character",
+    "model": "moree.character",
     "pk": 5,
     "fields": {
         "name": "어피치",

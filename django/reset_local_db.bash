@@ -8,7 +8,7 @@ DJANGO_SUPERUSER_USERNAME=root
 DJANGO_SUPERUSER_PASSWORD=root
 DJANGO_SUPERUSER_EMAIL=test@test.com
 
-APP_LIST=(common governance sample)
+APP_LIST=(common governance moree)
 
 APP_PATH_LIST=()
 for app in ${APP_LIST[@]}

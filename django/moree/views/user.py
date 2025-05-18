@@ -6,11 +6,11 @@ from drf_yasg.utils import swagger_auto_schema
 from core.pagenation import BasePagination
 from core.views import BaseGenericAPIView
 
-from sample.models import User
-from sample.filters import UserFilter
-from sample.enums import UserStatusEnum
-from sample.permissions import UserPermission
-from sample.serializers import UserSerializer
+from moree.models import User
+from moree.filters import UserFilter
+from moree.enums import UserStatusEnum
+from moree.permissions import UserPermission
+from moree.serializers import UserSerializer
 
 from governance.models import User as AdminUser
 from governance.permissions import UserPermission as AdminUserPermission

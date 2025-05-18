@@ -6,7 +6,7 @@ from core.enums import StatusEnum
 
 class Store(models.Model):
     store_categories = models.ManyToManyField(
-        "sample.StoreCategory",
+        "moree.StoreCategory",
     )
     title = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
@@ -72,12 +72,12 @@ class StoreCategory(models.Model):
 
 class StoreCharacterPool(models.Model):
     store = models.ForeignKey(
-        "sample.Store",
+        "moree.Store",
         on_delete=models.CASCADE,
         db_index=True
     )
     character = models.ForeignKey(
-        "sample.Character",
+        "moree.Character",
         on_delete=models.CASCADE,
         db_index=True
     )

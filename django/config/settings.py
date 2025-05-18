@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     "django_filters",
     "common",
     "governance",
-    "sample"
+    "moree"
 ]
 
 MIDDLEWARE = [

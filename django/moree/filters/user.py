@@ -1,6 +1,6 @@
 from django_filters import rest_framework
 
-from sample.models import User
+from moree.models import User
 
 from core.filters import BaseFilter
 

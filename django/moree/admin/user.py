@@ -1,5 +1,5 @@
 from django.contrib import admin
-from sample.models import (
+from moree.models import (
     User,
     UserAccessToken,
     UserRefreshToken,

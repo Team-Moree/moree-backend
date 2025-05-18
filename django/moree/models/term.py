@@ -4,12 +4,12 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from core.enums import StatusEnum
-from sample.enums import TermAgreementTypeEnum
+from moree.enums import TermAgreementTypeEnum
 
 
 class Term(models.Model):
     term_category = models.ForeignKey(
-        "sample.TermCategory",
+        "moree.TermCategory",
         on_delete=models.RESTRICT,
         db_index=True
     )

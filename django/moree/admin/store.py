@@ -2,12 +2,12 @@ from django.contrib import admin
 from django.utils.safestring import mark_safe
 from django.utils.html import format_html, format_html_join
 from core.environment import env
-from sample.models import (
+from moree.models import (
     Store,
     StoreCategory,
     StoreCharacterPool
 )
-from sample.form import StoreAdminForm
+from moree.form import StoreAdminForm
 
 
 @admin.register(Store)

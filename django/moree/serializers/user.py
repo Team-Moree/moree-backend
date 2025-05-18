@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
-from sample.models import User
-from sample.enums import UserGenderEnum
+from moree.models import User
+from moree.enums import UserGenderEnum
 
 
 class UserSerializer(serializers.ModelSerializer):

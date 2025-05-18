@@ -2,7 +2,14 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from core.enums import StatusEnum
-from sample.enums import UserStatusEnum, UserGenderEnum, UserProviderEnum, UserLogTypeEnum, UserStoreBookmarkVisibilityEnum, UserReviewReportReasonEnum
+from moree.enums import (
+    UserStatusEnum,
+    UserGenderEnum,
+    UserProviderEnum,
+    UserLogTypeEnum,
+    UserStoreBookmarkVisibilityEnum,
+    UserReviewReportReasonEnum
+)
 
 
 class User(models.Model):
@@ -55,12 +62,12 @@ class User(models.Model):
 
 class UserAccessToken(models.Model):
     user = models.OneToOneField(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
     user_refresh_token = models.OneToOneField(
-        "sample.UserRefreshToken",
+        "moree.UserRefreshToken",
         on_delete=models.CASCADE,
         db_index=True
     )
@@ -83,7 +90,7 @@ class UserAccessToken(models.Model):
 
 class UserRefreshToken(models.Model):
     user = models.OneToOneField(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
@@ -118,17 +125,17 @@ class UserRefreshToken(models.Model):
 
 class UserCharacterInventory(models.Model):
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
     character = models.ForeignKey(
-        "sample.Character",
+        "moree.Character",
         on_delete=models.CASCADE,
         db_index=True
     )
     store = models.ForeignKey(
-        "sample.Store",
+        "moree.Store",
         on_delete=models.CASCADE,
         db_index=True,
         help_text="유저가 해당 스토어에서 뽑기를 진행한 적이 있는지 없는지 판별하기 위함"
@@ -149,12 +156,12 @@ class UserCharacterInventory(models.Model):
 
 class UserFolloing(models.Model):
     user = models.OneToOneField(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
     following_user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True,
         related_name="following_user_sets"
@@ -169,7 +176,7 @@ class UserFolloing(models.Model):
 
 # class UserFeed(models.Model):
 #     user = models.ForeignKey(
-#         "sample.User",
+#         "moree.User",
 #         on_delete=models.CASCADE,
 #         db_index=True
 #     )
@@ -191,12 +198,12 @@ class UserFolloing(models.Model):
 
 class UserTermAgreement(models.Model):
     term = models.ForeignKey(
-        "sample.Term",
+        "moree.Term",
         on_delete=models.RESTRICT,
         db_index=True
     )
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.RESTRICT,
         db_index=True
     )
@@ -211,12 +218,12 @@ class UserTermAgreement(models.Model):
 
 class UserReview(models.Model):
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
     store = models.ForeignKey(
-        "sample.Store",
+        "moree.Store",
         on_delete=models.CASCADE,
         db_index=True
     )
@@ -243,12 +250,12 @@ class UserReview(models.Model):
 
 class UserReviewReport(models.Model):
     user_review = models.ForeignKey(
-        "sample.UserReview",
+        "moree.UserReview",
         on_delete=models.CASCADE,
         db_index=True
     )
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
@@ -267,12 +274,12 @@ class UserReviewReport(models.Model):
 
 class UserStoreStamp(models.Model):
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
     store = models.ForeignKey(
-        "sample.Store",
+        "moree.Store",
         on_delete=models.CASCADE,
         db_index=True
     )
@@ -301,12 +308,12 @@ class UserStoreStamp(models.Model):
 
 class UserStoreBookmark(models.Model):
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
     stores = models.ManyToManyField(
-        "sample.Store",
+        "moree.Store",
         db_index=True
     )
     title = models.CharField(
@@ -336,12 +343,12 @@ class UserStoreBookmark(models.Model):
 
 class UserStoreCategory(models.Model):
     store_category = models.ForeignKey(
-        "sample.StoreCategory",
+        "moree.StoreCategory",
         on_delete=models.CASCADE,
         db_index=True
     )
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True,
     )
@@ -355,7 +362,7 @@ class UserStoreCategory(models.Model):
 
 class UserLog(models.Model):
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         db_index=True,
         on_delete=models.RESTRICT
     )
@@ -402,12 +409,12 @@ class UserSMSVerification(models.Model):
 
 class UserSMSVerificationRequest(models.Model):
     user_sms_verification = models.ForeignKey(
-        "sample.UserSMSVerification",
+        "moree.UserSMSVerification",
         on_delete=models.RESTRICT,
         db_index=True
     )
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
@@ -429,7 +436,7 @@ class UserSMSVerificationRequest(models.Model):
 
 class UserSMSVerificationRecord(models.Model):
     user = models.ForeignKey(
-        "sample.User",
+        "moree.User",
         on_delete=models.CASCADE,
         db_index=True
     )
