@@ -6,7 +6,7 @@ from common.models import (
     StoredFile,
     StoredFilesGroup
 )
-from common.form import (
+from common.forms import (
     StoredFileAdminForm
 )
 from common.enums import UploaderTypeEnum
