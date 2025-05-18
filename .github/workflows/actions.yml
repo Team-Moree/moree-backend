@@ -104,7 +104,7 @@ jobs:
             docker rmi ${{env.IMAGE_NAME}} || true
             docker load -i /tmp/${{github.event.repository.name}}/${{env.IMAGE_FILE_NAME}}
             docker run -d --name ${{github.event.repository.name}} \
-              -p 12000:8080 \
+              -p ${{secrets.DOCKER_EXPORT_PORT}}:8080 \
               -e ENVIRONMENT="${{github.ref_name}}" \
               -e DJANGO_SECRET_KEY="${{secrets.DJANGO_SECRET_KEY}}" \
               -e SAMPLE_USER_SESSION_EXPIRE_TIME="${{secrets.SAMPLE_USER_SESSION_EXPIRE_TIME}}" \
@@ -115,6 +115,9 @@ jobs:
               -e AWS_REGION="${{secrets.AWS_REGION}}" \
               -e AWS_BUCKET_NAME="${{secrets.AWS_BUCKET_NAME}}" \
               -e NCP_KEY_ID="${{secrets.NCP_KEY_ID}}" \
+              -e DJANGO_SUPERUSER_USERNAME="${{secrets.DJANGO_SUPERUSER_USERNAME}}" \
+              -e DJANGO_SUPERUSER_PASSWORD="${{secrets.DJANGO_SUPERUSER_PASSWORD}}" \
+              -e DJANGO_SUPERUSER_EMAIL="${{secrets.DJANGO_SUPERUSER_EMAIL}}" \
               --restart always \
               ${{env.IMAGE_NAME}}
             rm /tmp/${{github.event.repository.name}}/${{env.IMAGE_FILE_NAME}}
