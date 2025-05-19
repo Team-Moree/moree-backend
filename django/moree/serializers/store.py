@@ -23,6 +23,8 @@ class BusinessDayMultipleChoiceField(serializers.MultipleChoiceField):
 
     def to_representation(self, value):
         # int -> ["Monday", ...]
+        if not isinstance(value, int):
+            return value
         return [day for day, bit in self.DAYS if value & bit]
 
     def to_internal_value(self, data):
