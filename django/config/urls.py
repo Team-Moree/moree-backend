@@ -23,7 +23,9 @@ from drf_yasg.views import get_schema_view
 
 from moree.views import (
     UserView,
-    UserDetailView
+    UserDetailView,
+    StoreView,
+    StoreDetailView,
 )
 from common.views import (
     StoredFileView,
@@ -60,4 +62,6 @@ urlpatterns = [
     path("stored-file/<int:pk>/", StoredFileDetailView.as_view(), name="stored-file-detail"),
     path('stored-files-group/', StoredFilesGroupView.as_view(), name='stored-files-group'),
     path("stored-files-group/<int:pk>/", StoredFilesGroupDetailView.as_view(), name="stored-files-group-detail"),
+    path("store", StoreView.as_view(), name='store'),
+    path("store/<int:pk>/", StoreDetailView.as_view(), name='store-detail'),
 ]

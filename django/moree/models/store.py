@@ -50,6 +50,10 @@ class Store(models.Model):
         verbose_name = _("Store")
         verbose_name_plural = _("Stores")
 
+    def delete(self, using=None, keep_parents=False):
+        self.status = StatusEnum.INACTIVE.value
+        self.save()
+
 
 class StoreCategory(models.Model):
     name = models.CharField(
@@ -68,6 +72,10 @@ class StoreCategory(models.Model):
     class Meta:
         verbose_name = _("Store Category")
         verbose_name_plural = _("Store Categories")
+    
+    def delete(self, using=None, keep_parents=False):
+        self.status = StatusEnum.INACTIVE.value
+        self.save()
 
 
 class StoreCharacterPool(models.Model):
@@ -96,3 +104,7 @@ class StoreCharacterPool(models.Model):
     class Meta:
         verbose_name = _("Store Character Pool")
         verbose_name_plural = _("Store Character Pools")
+
+    def delete(self, using=None, keep_parents=False):
+        self.status = StatusEnum.INACTIVE.value
+        self.save()
