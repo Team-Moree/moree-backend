@@ -66,6 +66,6 @@ urlpatterns = [
     path("stored-files-group/<int:pk>/", StoredFilesGroupDetailView.as_view(), name="stored-files-group-detail"),
     path("store", StoreView.as_view(), name='store'),
     path("store/<int:pk>/", StoreDetailView.as_view(), name='store-detail'),
-    path("store-category", StoreCategoryView.as_view(), name='store-category'),
+    path("store-category/", StoreCategoryView.as_view(), name='store-category'),
     path("store-category/<int:pk>/", StoreCategoryDetailView.as_view(), name='store-category-detail'),
 ]
