@@ -21,8 +21,7 @@ class StoredFileAdminForm(forms.ModelForm):
         instance = super().save(commit=False)
 
         uploaded_file = self.cleaned_data['file']
-        uploaded_file_name = uploaded_file.name
-        uploaded_file_ext = os.path.splitext(uploaded_file_name)[1]
+        uploaded_file_ext = os.path.splitext(uploaded_file.name)[1]
         s3_file_name = str(uuid.uuid4())
         s3_file_path = f"static/stored-file/{s3_file_name}{uploaded_file_ext}"
 
