@@ -68,13 +68,13 @@ class StoreAdmin(admin.ModelAdmin):
 
     def business_day_list(self, obj):
         DAY_CHOICES = [
-            (1, "일"),
-            (2, "월"),
-            (4, "화"),
+            (64, "일"),
+            (32, "월"),
+            (16, "화"),
             (8, "수"),
-            (16, "목"),
-            (32, "금"),
-            (64, "토"),
+            (4, "목"),
+            (2, "금"),
+            (1, "토"),
         ]
         days = [label for value, label in DAY_CHOICES if obj.business_day & value]
         return ", ".join(days)
