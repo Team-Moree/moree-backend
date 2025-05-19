@@ -21,7 +21,17 @@ from rest_framework import permissions
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
-from moree.views import UserView, UserDetailView
+from moree.views import (
+    UserView,
+    UserDetailView
+)
+from common.views import (
+    StoredFileView,
+    StoredFileDetailView,
+    StoredFilesGroupView,
+    StoredFilesGroupDetailView
+)
+
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -42,4 +52,8 @@ urlpatterns = [
     path("swagger/", schema_view.with_ui("swagger", cache_timeout=0), name="schema-swagger"),
     path('user/', UserView.as_view(), name='user'),
     path("user/<int:pk>/", UserDetailView.as_view(), name="user-detail"),
+    path('stored-file/', StoredFileView.as_view(), name='stored-file'),
+    path("stored-file/<int:pk>/", StoredFileDetailView.as_view(), name="stored-file-detail"),
+    path('stored-files-group/', StoredFilesGroupView.as_view(), name='stored-files-group'),
+    path("stored-files-group/<int:pk>/", StoredFilesGroupDetailView.as_view(), name="stored-files-group-detail"),
 ]

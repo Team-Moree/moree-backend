@@ -118,6 +118,7 @@ jobs:
               -e DJANGO_SUPERUSER_USERNAME="${{secrets.DJANGO_SUPERUSER_USERNAME}}" \
               -e DJANGO_SUPERUSER_PASSWORD="${{secrets.DJANGO_SUPERUSER_PASSWORD}}" \
               -e DJANGO_SUPERUSER_EMAIL="${{secrets.DJANGO_SUPERUSER_EMAIL}}" \
+              -e STATIC_FILE_EXPIRE_TIME="${{secrets.STATIC_FILE_EXPIRE_TIME}}" \
               --restart always \
               ${{env.IMAGE_NAME}}
             rm /tmp/${{github.event.repository.name}}/${{env.IMAGE_FILE_NAME}}

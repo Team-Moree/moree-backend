@@ -1,10 +1,11 @@
-import hashlib
+import uuid
 
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from core.environment import env
 from core.enums import StatusEnum
+from lib.timestamp import Timestamp
 
 from common.enums import UploaderTypeEnum
 
@@ -40,8 +41,7 @@ class StoredFile(models.Model):
         max_length=255,
         db_index=True,
         editable=False,
-        default=StatusEnum.INACTIVE.value,
-        # default=lambda: hashlib.md5(binary).hexdigest()
+        default=StatusEnum.INACTIVE.value
     )
     uploader_type = models.CharField(
         max_length=64,
@@ -66,9 +66,17 @@ class StoredFile(models.Model):
         verbose_name = _("Stored File")
         verbose_name_plural = _("Stored Files")
 
+    def delete(self, using=None, keep_parents=False):
+        self.expire_at = (Timestamp() + int(env.get("STATIC_FILE_EXPIRE_TIME"))).datetime
+        self.status = StatusEnum.INACTIVE.value
+        self.save()
+
 
 class StoredFilesGroup(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(
+        max_length=255,
+        default=uuid.uuid4
+    )
     description = models.TextField(null=True)
     status = models.CharField(
         max_length=64,
@@ -85,3 +93,7 @@ class StoredFilesGroup(models.Model):
     class Meta:
         verbose_name = _("Stored File Group")
         verbose_name_plural = _("Stored Files Groups")
+
+    def delete(self, using=None, keep_parents=False):
+        self.status = StatusEnum.INACTIVE.value
+        self.save()
