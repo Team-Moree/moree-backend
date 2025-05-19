@@ -35,9 +35,9 @@ from common.views import (
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Sample Service API",
+        title="Moree API",
         default_version="0.0.1",
-        description="Sample Service API Docs",
+        description="Moree API Docs",
         terms_of_service="https://www.google.com/policies/terms/",
         contact=openapi.Contact(email="goct8@naver.com"),
         license=openapi.License(name="mit"),
@@ -45,6 +45,10 @@ schema_view = get_schema_view(
     public=True,
     permission_classes=[permissions.AllowAny],
 )
+
+admin.site.site_title = "Moree Admin 시스템"
+admin.site.site_header = "Moree Admin 페이지"
+admin.site.index_title = "Moree Admin 대시보드"
 
 urlpatterns = [
     path('django-admin/', admin.site.urls),

@@ -12,9 +12,6 @@ from moree.enums import UserStatusEnum
 from moree.permissions import UserPermission
 from moree.serializers import UserSerializer
 
-from governance.models import User as AdminUser
-from governance.permissions import UserPermission as AdminUserPermission
-
 
 class UserView(
     mixins.CreateModelMixin,
@@ -36,8 +33,8 @@ class UserView(
                 id=self.request.user.id,
                 status=UserStatusEnum.ACTIVE,
             )
-        elif isinstance(self.request.user, AdminUser):
-            queryset = User.objects.all()
+        # elif isinstance(self.request.user, AdminUser):
+        #     queryset = User.objects.all()
         elif isinstance(self.request.user, AnonymousUser):
             # queryset = User.objects.none()
             queryset = User.objects.all()
@@ -45,7 +42,7 @@ class UserView(
 
     def get_permissions(self):
         if self.request.method in ("GET", "DELETE"):
-            return [UserPermission(), AdminUserPermission()]
+            return [UserPermission()]
         elif self.request.method in ("PUT", "PATCH"):
             return [UserPermission()]
         return super().get_permissions()
@@ -84,8 +81,8 @@ class UserDetailView(
         return queryset
 
     def get_permissions(self):
-        if self.request.method in ("GET", "PUT", "PATCH", "DELETE"):
-            return [AdminUserPermission()]
+        # if self.request.method in ("GET", "PUT", "PATCH", "DELETE"):
+        #     return [AdminUserPermission()]
         return super().get_permissions()
 
     @swagger_auto_schema()
