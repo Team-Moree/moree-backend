@@ -4,5 +4,7 @@ from .user import (
 )
 from .store import (
     StoreView,
-    StoreDetailView
+    StoreDetailView,
+    StoreCategoryView,
+    StoreCategoryDetailView,
 )

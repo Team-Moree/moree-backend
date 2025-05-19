@@ -5,16 +5,21 @@ from drf_yasg.utils import swagger_auto_schema
 
 from core.pagenation import BasePagination
 from core.views import BaseGenericAPIView
+from core.enums import StatusEnum
 
-from moree.models import (
-    # User,
-    Store
-)
-from moree.enums import UserStatusEnum
-
-from moree.filters import StoreFilter
 from moree.permissions import UserPermission
-from moree.serializers import StoreSerializer
+from moree.models import (
+    Store,
+    StoreCategory
+)
+from moree.filters import (
+    StoreFilter,
+    StoreCategoryFilter
+)
+from moree.serializers import (
+    StoreSerializer,
+    StoreCategorySerializer
+)
 
 
 class StoreView(
@@ -30,7 +35,7 @@ class StoreView(
 
     def get_queryset(self):
         queryset = Store.objects.filter(
-            status=UserStatusEnum.ACTIVE,
+            status=StatusEnum.ACTIVE.value,
         ).order_by("-id")
         return queryset
 
@@ -58,7 +63,7 @@ class StoreDetailView(
 
     def get_queryset(self):
         queryset = Store.objects.filter(
-            status=UserStatusEnum.ACTIVE,
+            status=StatusEnum.ACTIVE.value,
         ).order_by("-id")
         return queryset
 
@@ -82,3 +87,49 @@ class StoreDetailView(
     @swagger_auto_schema()
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
+
+
+class StoreCategoryView(
+    mixins.ListModelMixin,
+    BaseGenericAPIView
+):
+    serializer_class = StoreCategorySerializer
+    pagination_class = BasePagination
+
+    filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
+    filterset_class = StoreCategoryFilter
+
+    def get_queryset(self):
+        queryset = StoreCategory.objects.filter(
+            status=StatusEnum.ACTIVE.value,
+        ).order_by("-id")
+        return queryset
+
+    def get_permissions(self):
+        if self.request.method in ("POST",):
+            return [UserPermission()]
+        return super().get_permissions()
+
+    @swagger_auto_schema()
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+
+class StoreCategoryDetailView(
+    mixins.RetrieveModelMixin,
+    BaseGenericAPIView
+):
+    serializer_class = StoreCategorySerializer
+
+    def get_queryset(self):
+        queryset = StoreCategory.objects.filter(
+            status=StatusEnum.ACTIVE.value,
+        ).order_by("-id")
+        return queryset
+
+    def get_permissions(self):
+        return super().get_permissions()
+
+    @swagger_auto_schema()
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)

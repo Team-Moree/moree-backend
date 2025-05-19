@@ -1,6 +1,9 @@
 from rest_framework import serializers
 
-from moree.models import Store
+from moree.models import (
+    Store,
+    StoreCategory
+)
 
 
 class BusinessDayMultipleChoiceField(serializers.MultipleChoiceField):
@@ -54,3 +57,9 @@ class StoreSerializer(serializers.ModelSerializer):
         if business_day is not None:
             validated_data["business_day"] = business_day
         return super().update(instance, validated_data)
+
+
+class StoreCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StoreCategory
+        exclude = ("status",)

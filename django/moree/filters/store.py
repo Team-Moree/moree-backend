@@ -67,3 +67,16 @@ class StoreFilter(BaseFilter):
     class Meta:
         model = Store
         fields = "__all__"
+
+
+class StoreCategoryFilter(BaseFilter):
+    name = rest_framework.CharFilter(field_name="name", lookup_expr="iexact")
+    name_contains = rest_framework.CharFilter(field_name="name", lookup_expr="icontains")
+
+    priority = rest_framework.NumberFilter(field_name="priority", lookup_expr="exact")
+
+    status = rest_framework.CharFilter(field_name="status", lookup_expr="iexact")
+
+    class Meta:
+        model = StoreCategory
+        fields = "__all__"

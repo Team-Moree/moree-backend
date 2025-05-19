@@ -1,2 +1,5 @@
 from .user import UserSerializer
-from .store import StoreSerializer
+from .store import (
+    StoreSerializer,
+    StoreCategorySerializer,
+)

@@ -1,2 +1,5 @@
 from .user import UserFilter
-from .store import StoreFilter
+from .store import (
+    StoreFilter,
+    StoreCategoryFilter,
+)

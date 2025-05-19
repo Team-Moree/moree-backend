@@ -8,6 +8,7 @@ class Store(models.Model):
     store_categories = models.ManyToManyField(
         "moree.StoreCategory",
     )
+    # TODO: 등록한 유저에 대한 정보 필요
     title = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
     latitude = models.DecimalField(
@@ -62,6 +63,11 @@ class StoreCategory(models.Model):
     )
     priority = models.PositiveSmallIntegerField(
         unique=True
+    )
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
