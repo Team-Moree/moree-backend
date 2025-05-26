@@ -35,7 +35,11 @@ from moree.views import (
     StoreCategoryView,
     StoreCategoryDetailView,
     CharacterView,
-    CharacterDetailView
+    CharacterDetailView,
+    TermView,
+    TermDetailView,
+    TermCategoryView,
+    TermCategoryDetailView
 )
 
 
@@ -72,4 +76,8 @@ urlpatterns = [
     path("store-category/<int:pk>/", StoreCategoryDetailView.as_view(), name='store-category-detail'),
     path("character/", CharacterView.as_view(), name='character'),
     path("character/<int:pk>/", CharacterDetailView.as_view(), name='character-detail'),
+    path("term/", TermView.as_view(), name='term'),
+    path("term/<int:pk>/", TermDetailView.as_view(), name='term-detail'),
+    path("term-category/", TermCategoryView.as_view(), name='term-category'),
+    path("term-category/<int:pk>/", TermCategoryDetailView.as_view(), name='term-category-detail'),
 ]

@@ -33,14 +33,14 @@ class Term(models.Model):
         editable=False,
         default=None
     )
+    priority = models.PositiveSmallIntegerField(
+        unique=True
+    )
     status = models.CharField(
         max_length=64,
         choices=StatusEnum.choices,
         default=StatusEnum.INACTIVE.value,
         db_index=True
-    )
-    priority = models.PositiveSmallIntegerField(
-        unique=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

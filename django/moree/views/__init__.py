@@ -12,3 +12,9 @@ from .character import (
     CharacterView,
     CharacterDetailView,
 )
+from .term import (
+    TermView,
+    TermDetailView,
+    TermCategoryView,
+    TermCategoryDetailView,
+)

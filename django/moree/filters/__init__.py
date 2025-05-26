@@ -6,3 +6,7 @@ from .store import (
 from .character import (
     CharacterFilter
 )
+from .term import (
+    TermFilter,
+    TermCategoryFilter
+)

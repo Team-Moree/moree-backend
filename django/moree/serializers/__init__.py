@@ -6,4 +6,7 @@ from .store import (
 from .character import (
     CharacterSerializer
 )
-
+from .term import (
+    TermSerializer,
+    TermCategorySerializer
+)
