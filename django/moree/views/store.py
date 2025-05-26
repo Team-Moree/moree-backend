@@ -10,15 +10,18 @@ from core.enums import StatusEnum
 from moree.permissions import UserPermission
 from moree.models import (
     Store,
-    StoreCategory
+    StoreCategory,
+    StoreCharacterPool
 )
 from moree.filters import (
     StoreFilter,
-    StoreCategoryFilter
+    StoreCategoryFilter,
+    StoreCharacterPoolFilter
 )
 from moree.serializers import (
     StoreSerializer,
-    StoreCategorySerializer
+    StoreCategorySerializer,
+    StoreCharacterPoolSerializer
 )
 
 
@@ -123,6 +126,52 @@ class StoreCategoryDetailView(
 
     def get_queryset(self):
         queryset = StoreCategory.objects.filter(
+            status=StatusEnum.ACTIVE.value,
+        ).order_by("-id")
+        return queryset
+
+    def get_permissions(self):
+        return super().get_permissions()
+
+    @swagger_auto_schema()
+    def get(self, request, *args, **kwargs):
+        return self.retrieve(request, *args, **kwargs)
+
+
+class StoreCharacterPoolView(
+    mixins.ListModelMixin,
+    BaseGenericAPIView
+):
+    serializer_class = StoreCharacterPoolSerializer
+    pagination_class = BasePagination
+
+    filter_backends = (DjangoFilterBackend, filters.OrderingFilter)
+    filterset_class = StoreCharacterPoolFilter
+
+    def get_queryset(self):
+        queryset = StoreCharacterPool.objects.filter(
+            status=StatusEnum.ACTIVE.value,
+        ).order_by("-id")
+        return queryset
+
+    def get_permissions(self):
+        if self.request.method in ("POST",):
+            return [UserPermission()]
+        return super().get_permissions()
+
+    @swagger_auto_schema()
+    def get(self, request, *args, **kwargs):
+        return self.list(request, *args, **kwargs)
+
+
+class StoreCharacterPoolDetailView(
+    mixins.RetrieveModelMixin,
+    BaseGenericAPIView
+):
+    serializer_class = StoreCharacterPoolSerializer
+
+    def get_queryset(self):
+        queryset = StoreCharacterPool.objects.filter(
             status=StatusEnum.ACTIVE.value,
         ).order_by("-id")
         return queryset

@@ -2,7 +2,8 @@ from rest_framework import serializers
 
 from moree.models import (
     Store,
-    StoreCategory
+    StoreCategory,
+    StoreCharacterPool
 )
 
 
@@ -64,4 +65,10 @@ class StoreSerializer(serializers.ModelSerializer):
 class StoreCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = StoreCategory
+        exclude = ("status",)
+
+
+class StoreCharacterPoolSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = StoreCharacterPool
         exclude = ("status",)

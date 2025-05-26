@@ -7,6 +7,8 @@ from .store import (
     StoreDetailView,
     StoreCategoryView,
     StoreCategoryDetailView,
+    StoreCharacterPoolView,
+    StoreCharacterPoolDetailView
 )
 from .character import (
     CharacterView,

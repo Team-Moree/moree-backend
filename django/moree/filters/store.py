@@ -80,3 +80,13 @@ class StoreCategoryFilter(BaseFilter):
     class Meta:
         model = StoreCategory
         fields = "__all__"
+
+
+class StoreCharacterPoolFilter(BaseFilter):
+    weight = rest_framework.NumberFilter(field_name="weight", lookup_expr="exact")
+
+    status = rest_framework.CharFilter(field_name="status", lookup_expr="iexact")
+
+    class Meta:
+        model = StoreCharacterPool
+        fields = "__all__"
