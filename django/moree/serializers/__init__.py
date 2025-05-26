@@ -3,3 +3,7 @@ from .store import (
     StoreSerializer,
     StoreCategorySerializer,
 )
+from .character import (
+    CharacterSerializer
+)
+
