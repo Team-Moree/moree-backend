@@ -208,6 +208,12 @@ class UserTermAgreement(models.Model):
         db_index=True
     )
     is_agreed = models.BooleanField(default=False, db_index=True)
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -240,6 +246,12 @@ class UserReview(models.Model):
         default=None,
         null=True
     )
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -262,6 +274,12 @@ class UserReviewReport(models.Model):
     reason = models.CharField(
         max_length=64,
         choices=UserReviewReportReasonEnum.choices,
+        db_index=True
+    )
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
         db_index=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
@@ -298,6 +316,12 @@ class UserStoreStamp(models.Model):
     #     default=None,
     #     null=True
     # )
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -333,6 +357,12 @@ class UserStoreBookmark(models.Model):
         db_index=True,
         null=True
     )
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -351,6 +381,12 @@ class UserStoreCategory(models.Model):
         "moree.User",
         on_delete=models.CASCADE,
         db_index=True,
+    )
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -374,6 +410,12 @@ class UserLog(models.Model):
     )
     target_id = models.PositiveIntegerField(null=True)
     message = models.TextField()
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -387,17 +429,17 @@ class UserLog(models.Model):
 
 class UserSMSVerification(models.Model):
     content = models.TextField()
-    status = models.CharField(
-        max_length=64,
-        db_index=True,
-        choices=StatusEnum.choices,
-        default=StatusEnum.INACTIVE.value
-    )
     hash = models.CharField(
         max_length=255,
         db_index=True,
         editable=False,
         # default=lambda: hashlib.md5(binary).hexdigest()
+    )
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -426,6 +468,12 @@ class UserSMSVerificationRequest(models.Model):
         max_length=6,
         db_index=True
     )
+    status = models.CharField(
+        max_length=64,
+        choices=StatusEnum.choices,
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -447,9 +495,9 @@ class UserSMSVerificationRecord(models.Model):
     )
     status = models.CharField(
         max_length=64,
-        db_index=True,
         choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value
+        default=StatusEnum.ACTIVE.value,
+        db_index=True
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

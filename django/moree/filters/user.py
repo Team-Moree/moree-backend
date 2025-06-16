@@ -1,6 +1,18 @@
 from django_filters import rest_framework
 
-from moree.models import User
+from moree.models import (
+    User,
+    UserAccessToken,
+    UserRefreshToken,
+    UserLog,
+    UserCharacterInventory,
+    UserReview,
+    UserReviewReport,
+    UserStoreBookmark,
+    UserStoreCategory,
+    UserStoreStamp,
+    UserTermAgreement,
+)
 
 from core.filters import BaseFilter
 
@@ -31,3 +43,62 @@ class UserFilter(BaseFilter):
             "status",
             "birthday"
         ]
+
+
+class UserAccessTokenFilter(BaseFilter):
+    class Meta:
+        model = UserAccessToken
+        fields = "__all__"
+
+
+class UserRefreshTokenFilter(BaseFilter):
+    class Meta:
+        model = UserRefreshToken
+        fields = "__all__"
+
+# class UserLogFilter(BaseFilter):
+#     class Meta:
+#         model = UserLog
+#         fields = "__all__"
+
+
+class UserCharacterInventoryFilter(BaseFilter):
+    class Meta:
+        model = UserCharacterInventory
+        fields = "__all__"
+
+
+class UserReviewFilter(BaseFilter):
+    class Meta:
+        model = UserReview
+        fields = "__all__"
+
+
+class UserReviewReportFilter(BaseFilter):
+    class Meta:
+        model = UserReviewReport
+        fields = "__all__"
+
+
+class UserStoreBookmarkFilter(BaseFilter):
+    class Meta:
+        model = UserStoreBookmark
+        fields = "__all__"
+
+
+class UserStoreCategoryFilter(BaseFilter):
+    class Meta:
+        model = UserStoreCategory
+        fields = "__all__"
+
+
+class UserStoreStampFilter(BaseFilter):
+    class Meta:
+        model = UserStoreStamp
+        fields = "__all__"
+
+
+class UserTermAgreementFilter(BaseFilter):
+    class Meta:
+        model = UserTermAgreement
+        fields = "__all__"
