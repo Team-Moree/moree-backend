@@ -1,9 +1,8 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from core.enums import StatusEnum
+from core.models import BaseModel
 from moree.enums import (
-    UserStatusEnum,
     UserGenderEnum,
     UserProviderEnum,
     UserLogTypeEnum,
@@ -12,16 +11,10 @@ from moree.enums import (
 )
 
 
-class User(models.Model):
+class User(BaseModel):
     name = models.CharField(
         max_length=255,
         db_index=True
-    )
-    status = models.CharField(
-        max_length=64,
-        db_index=True,
-        choices=UserStatusEnum.choices,
-        default=UserStatusEnum.ACTIVE.value
     )
     email = models.EmailField(db_index=True)
     phone = models.CharField(
@@ -49,8 +42,6 @@ class User(models.Model):
         db_index=True,
         null=True
     )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.name}({self.email})"
@@ -60,7 +51,7 @@ class User(models.Model):
         verbose_name_plural = _("Users")
 
 
-class UserAccessToken(models.Model):
+class UserAccessToken(BaseModel):
     user = models.OneToOneField(
         "moree.User",
         on_delete=models.CASCADE,
@@ -80,15 +71,13 @@ class UserAccessToken(models.Model):
         db_index=True
     )
     expire_at = models.DateTimeField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Access Token")
         verbose_name_plural = _("User Access Tokens")
 
 
-class UserRefreshToken(models.Model):
+class UserRefreshToken(BaseModel):
     user = models.OneToOneField(
         "moree.User",
         on_delete=models.CASCADE,
@@ -115,15 +104,13 @@ class UserRefreshToken(models.Model):
         db_index=True
     )
     expire_at = models.DateTimeField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Refresh Token")
         verbose_name_plural = _("User Refresh Tokens")
 
 
-class UserCharacterInventory(models.Model):
+class UserCharacterInventory(BaseModel):
     user = models.ForeignKey(
         "moree.User",
         on_delete=models.CASCADE,
@@ -140,21 +127,13 @@ class UserCharacterInventory(models.Model):
         db_index=True,
         help_text="유저가 해당 스토어에서 뽑기를 진행한 적이 있는지 없는지 판별하기 위함"
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Character Inventory")
         verbose_name_plural = _("User Character Inventories")
 
 
-class UserFolloing(models.Model):
+class UserFolloing(BaseModel):
     user = models.OneToOneField(
         "moree.User",
         on_delete=models.CASCADE,
@@ -166,15 +145,13 @@ class UserFolloing(models.Model):
         db_index=True,
         related_name="following_user_sets"
     )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Following")
         verbose_name_plural = _("User Followings")
 
 
-# class UserFeed(models.Model):
+# class UserFeed(BaseModel):
 #     user = models.ForeignKey(
 #         "moree.User",
 #         on_delete=models.CASCADE,
@@ -188,15 +165,13 @@ class UserFolloing(models.Model):
 #         default=None,
 #         null=True
 #     )
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-
+#
 #     class Meta:
 #         verbose_name = _("User Feed")
 #         verbose_name_plural = _("User Feeds")
 
 
-class UserTermAgreement(models.Model):
+class UserTermAgreement(BaseModel):
     term = models.ForeignKey(
         "moree.Term",
         on_delete=models.RESTRICT,
@@ -208,21 +183,13 @@ class UserTermAgreement(models.Model):
         db_index=True
     )
     is_agreed = models.BooleanField(default=False, db_index=True)
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Term Agreement")
         verbose_name_plural = _("User Term Agreements")
 
 
-class UserReview(models.Model):
+class UserReview(BaseModel):
     user = models.ForeignKey(
         "moree.User",
         on_delete=models.CASCADE,
@@ -246,21 +213,13 @@ class UserReview(models.Model):
         default=None,
         null=True
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Review")
         verbose_name_plural = _("User Reviews")
 
 
-class UserReviewReport(models.Model):
+class UserReviewReport(BaseModel):
     user_review = models.ForeignKey(
         "moree.UserReview",
         on_delete=models.CASCADE,
@@ -276,21 +235,13 @@ class UserReviewReport(models.Model):
         choices=UserReviewReportReasonEnum.choices,
         db_index=True
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Review Report")
         verbose_name_plural = _("User Review Reports")
 
 
-class UserStoreStamp(models.Model):
+class UserStoreStamp(BaseModel):
     user = models.ForeignKey(
         "moree.User",
         on_delete=models.CASCADE,
@@ -316,21 +267,13 @@ class UserStoreStamp(models.Model):
     #     default=None,
     #     null=True
     # )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Store Stamp")
         verbose_name_plural = _("User Store Stamps")
 
 
-class UserStoreBookmark(models.Model):
+class UserStoreBookmark(BaseModel):
     user = models.ForeignKey(
         "moree.User",
         on_delete=models.CASCADE,
@@ -357,21 +300,13 @@ class UserStoreBookmark(models.Model):
         db_index=True,
         null=True
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Store Bookmark")
         verbose_name_plural = _("User Store Bookmarks")
 
 
-class UserStoreCategory(models.Model):
+class UserStoreCategory(BaseModel):
     store_category = models.ForeignKey(
         "moree.StoreCategory",
         on_delete=models.CASCADE,
@@ -382,21 +317,13 @@ class UserStoreCategory(models.Model):
         on_delete=models.CASCADE,
         db_index=True,
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User Store Category")
         verbose_name_plural = _("User Store Categories")
 
 
-class UserLog(models.Model):
+class UserLog(BaseModel):
     user = models.ForeignKey(
         "moree.User",
         db_index=True,
@@ -410,14 +337,6 @@ class UserLog(models.Model):
     )
     target_id = models.PositiveIntegerField(null=True)
     message = models.TextField()
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.type}({self.user.name})"
@@ -427,7 +346,7 @@ class UserLog(models.Model):
         verbose_name_plural = _("User Logs")
     
 
-class UserSMSVerification(models.Model):
+class UserSMSVerification(BaseModel):
     content = models.TextField()
     hash = models.CharField(
         max_length=255,
@@ -435,21 +354,13 @@ class UserSMSVerification(models.Model):
         editable=False,
         # default=lambda: hashlib.md5(binary).hexdigest()
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User SMS Verification")
         verbose_name_plural = _("User SMS Verification")
 
 
-class UserSMSVerificationRequest(models.Model):
+class UserSMSVerificationRequest(BaseModel):
     user_sms_verification = models.ForeignKey(
         "moree.UserSMSVerification",
         on_delete=models.RESTRICT,
@@ -468,21 +379,13 @@ class UserSMSVerificationRequest(models.Model):
         max_length=6,
         db_index=True
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User SMS Verification Request")
         verbose_name_plural = _("User SMS Verification Requests")
 
 
-class UserSMSVerificationRecord(models.Model):
+class UserSMSVerificationRecord(BaseModel):
     user = models.ForeignKey(
         "moree.User",
         on_delete=models.CASCADE,
@@ -493,14 +396,6 @@ class UserSMSVerificationRecord(models.Model):
         db_index=True
         # unique 인 값은 아니지만 신규 등록시 기존 인증은 Inactive 혹은 deleted 해야함
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("User SMS Verification Record")

@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from core.enums import StatusEnum
+from core.models import BaseModel
 
 
-class Character(models.Model):
+class Character(BaseModel):
     # TODO : 이름 변경
     name = models.CharField(
         max_length=255,
@@ -17,13 +17,6 @@ class Character(models.Model):
         default=None
     )
     description = models.TextField()
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name

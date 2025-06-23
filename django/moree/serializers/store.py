@@ -47,7 +47,6 @@ class StoreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Store
         read_only_fields = ("business_day",)
-        exclude = ("status",)
 
     def create(self, validated_data):
         business_day = validated_data.pop("business_day_list", None)
@@ -65,10 +64,8 @@ class StoreSerializer(serializers.ModelSerializer):
 class StoreCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = StoreCategory
-        exclude = ("status",)
 
 
 class StoreCharacterPoolSerializer(serializers.ModelSerializer):
     class Meta:
         model = StoreCharacterPool
-        exclude = ("status",)

@@ -8,4 +8,3 @@ from moree.models import (
 class CharacterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Character
-        exclude = ("status",)

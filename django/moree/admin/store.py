@@ -28,13 +28,11 @@ class StoreAdmin(admin.ModelAdmin):
         "pre_order_start_at",
         "opening_time",
         "closing_time",
-        "status",
         "created_at",
         "updated_at",
     )
     list_display_links = ("id", "title")
     search_fields = ("title", "address")
-    list_filter = ("status",)
     ordering = ("-created_at",)
 
     def get_queryset(self, request):
@@ -96,12 +94,10 @@ class StoreCharacterPoolAdmin(admin.ModelAdmin):
         "store_title",
         "character_name",
         "weight",
-        "status",
         "created_at",
         "updated_at"
     )
     search_fields = ("store__title", "character__name")
-    list_filter = ("status",)
     ordering = ("-created_at",)
 
     def store_title(self, obj):

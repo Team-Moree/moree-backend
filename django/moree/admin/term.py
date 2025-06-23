@@ -14,14 +14,13 @@ class TermAdmin(admin.ModelAdmin):
         "name",
         "version",
         "priority",
-        "status",
         "hash",
         "created_at",
         "updated_at"
     )
     list_display_links = ("id", "name")
     search_fields = ("name", "term_category__name")
-    list_filter = ("status", "term_category__name")
+    list_filter = ("term_category__name",)
     ordering = ("-created_at", "-version")
 
     def term_category(self, obj):
@@ -32,5 +31,4 @@ class TermAdmin(admin.ModelAdmin):
 @admin.register(TermCategory)
 class TermCategoryAdmin(admin.ModelAdmin):
     search_fields = ("name",)
-    list_filter = ("status",)
     ordering = ("-created_at",)

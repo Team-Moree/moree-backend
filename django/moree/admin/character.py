@@ -10,5 +10,4 @@ class CharacterAdmin(admin.ModelAdmin):
         return tuple(field.name for field in self.model._meta.fields)
     search_fields = ("name",)
     list_display_links = ("id", "name",)
-    list_filter = ("status",)
     ordering = ("-created_at",)

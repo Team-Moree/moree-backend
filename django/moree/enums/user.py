@@ -1,12 +1,6 @@
 from django.db.models import TextChoices
 
 
-class UserStatusEnum(TextChoices):
-    ACTIVE = "ACTIVE", "Active"
-    DORMANT = "DORMANT", "Dormant"
-    WITHDRAWN = "WITHDRAWN", "Withdrawn"
-
-
 class UserGenderEnum(TextChoices):
     MALE = "MALE", "Male"
     FEMALE = "FEMALE", "Female"

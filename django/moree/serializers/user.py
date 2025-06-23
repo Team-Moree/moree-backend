@@ -22,7 +22,6 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         read_only_fields = ("email",)
-        exclude = ("status",)
 
 
 class UserAccessTokenSerializer(serializers.ModelSerializer):
@@ -58,46 +57,38 @@ class UserRefreshTokenSerializer(serializers.ModelSerializer):
 # class UserLogSerializer(serializers.ModelSerializer):
 #     class Meta:
 #         model = UserLog
-#         exclude = ("status",)
 
 
 class UserCharacterInventorySerializer(serializers.ModelSerializer):
     class Meta:
         model = UserCharacterInventory
-        exclude = ("status",)
 
 
 class UserReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserReview
-        exclude = ("status",)
 
 
 class UserReviewReportSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserReviewReport
-        exclude = ("status",)
 
 
 class UserStoreBookmarkSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserStoreBookmark
-        exclude = ("status",)
 
 
 class UserStoreCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = UserStoreCategory
-        exclude = ("status",)
 
 
 class UserStoreStampSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserStoreStamp
-        exclude = ("status",)
 
 
 class UserTermAgreementSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserTermAgreement
-        exclude = ("status",)

@@ -1,10 +1,10 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-from core.enums import StatusEnum
+from core.models import BaseModel
 
 
-class Store(models.Model):
+class Store(BaseModel):
     store_categories = models.ManyToManyField(
         "moree.StoreCategory",
     )
@@ -36,13 +36,6 @@ class Store(models.Model):
         default=None,
         null=True
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.INACTIVE.value
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.title
@@ -51,12 +44,8 @@ class Store(models.Model):
         verbose_name = _("Store")
         verbose_name_plural = _("Stores")
 
-    def delete(self, using=None, keep_parents=False):
-        self.status = StatusEnum.INACTIVE.value
-        self.save()
 
-
-class StoreCategory(models.Model):
+class StoreCategory(BaseModel):
     name = models.CharField(
         max_length=64,
         unique=True
@@ -64,13 +53,6 @@ class StoreCategory(models.Model):
     priority = models.PositiveSmallIntegerField(
         unique=True
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name
@@ -78,13 +60,9 @@ class StoreCategory(models.Model):
     class Meta:
         verbose_name = _("Store Category")
         verbose_name_plural = _("Store Categories")
-    
-    def delete(self, using=None, keep_parents=False):
-        self.status = StatusEnum.INACTIVE.value
-        self.save()
 
 
-class StoreCharacterPool(models.Model):
+class StoreCharacterPool(BaseModel):
     store = models.ForeignKey(
         "moree.Store",
         on_delete=models.CASCADE,
@@ -98,19 +76,7 @@ class StoreCharacterPool(models.Model):
     weight = models.PositiveIntegerField(
         help_text="뽑힐 가중치 (값이 클수록 잘 뽑힘)"
     )
-    status = models.CharField(
-        max_length=64,
-        choices=StatusEnum.choices,
-        default=StatusEnum.ACTIVE.value,
-        db_index=True
-    )
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
         verbose_name = _("Store Character Pool")
         verbose_name_plural = _("Store Character Pools")
-
-    def delete(self, using=None, keep_parents=False):
-        self.status = StatusEnum.INACTIVE.value
-        self.save()
