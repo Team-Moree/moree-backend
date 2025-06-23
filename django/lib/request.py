@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 # author: JaeHyuk Kim <goct8@naver.com>
-# version: 0.0.7
+# version: 0.0.7 / External ver.
 # Copyright 2022. goct8(JaeHyuk Kim) All rights reserved.
 
 import json
@@ -10,6 +10,8 @@ import logging
 import requests
 
 from typing import Union, Literal, Optional
+
+from common.exceptions import ExternalRequestError
 
 
 class HTTPException(Exception):
@@ -40,7 +42,7 @@ class MaxRetryError(Exception):
     pass
 
 
-class Request:
+class ExternalRequest:
     """
     A class to perform HTTP requests with features like retry logic, timeout handling, redirect handling, etc.
 
@@ -49,13 +51,10 @@ class Request:
     :param timeout: The timeout for each individual request in seconds, not including the total time for retries.
     :param verify: Whether to verify the server's TLS certificate.
     :param redirect: Whether to follow redirects. If set to True, the class will follow redirects, otherwise, it won't.
-    :param logger: A logger instance used to log request details, errors, and retry attempts.
-    If not provided, the default root logger is used.
     """
     def __init__(self, total: int = 3, retry_interval: float = 0.5,
-                 timeout: int = 3, verify: bool = False, redirect: bool = True,
-                 logger: logging.Logger = logging.getLogger()):
-        self.logger = logger
+                 timeout: int = 3, verify: bool = False, redirect: bool = True):
+        self.logger = logging.getLogger("external")
         self.total = total
         self.retry_interval = retry_interval
         self.timeout = timeout
@@ -156,7 +155,8 @@ class Request:
                         f"{f' - Body({body})' if body else ''}"
                         f" - Exception({error})"
                     )
-                    raise MaxRetryError(f"Maximum retry attempts exceeded - URL('{url}') - Total({self.total})")
+                    # raise MaxRetryError(f"Maximum retry attempts exceeded - URL('{url}') - Total({self.total})")
+                    raise ExternalRequestError()
         return None
 
     def get(self, url: str, params: Optional[dict] = None, headers: Optional[dict] = None,
