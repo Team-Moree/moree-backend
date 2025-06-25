@@ -7,7 +7,11 @@ from moree.enums import (
     UserProviderEnum,
     UserLogTypeEnum,
     UserStoreBookmarkVisibilityEnum,
-    UserReviewReportReasonEnum
+    UserReviewReportReasonEnum,
+    TermAgreementTypeEnum
+)
+from moree.models import (
+    Term
 )
 
 
@@ -36,12 +40,20 @@ class User(BaseModel):
         db_index=True,
         null=True
     )
-    profile_backgroud_img_stored_files_group = models.ForeignKey(
+    profile_background_img_stored_files_group = models.ForeignKey(
         "common.StoredFilesGroup",
         on_delete=models.RESTRICT,
         db_index=True,
         null=True
     )
+
+    @property
+    def is_agreed_terms(self):
+        return UserTermAgreement.objects.filter(
+            user=self,
+            term__agreement_type=TermAgreementTypeEnum.REQUIRED.value,
+            is_agreed=True
+        ).exists()
 
     def __str__(self):
         return f"{self.name}({self.email})"
